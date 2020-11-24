@@ -1,0 +1,13 @@
+
+  <%= form_tag "#", method: :get do %>
+    <div class="search-form-control form-group">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
+        id: "search_query",
+        placeholder: "Enter your home address",
+        height: "45px"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary", style:"margin-top: 10px; height: 44px; border-radius: 4px;" %>
+    </div>
+  <% end %>
