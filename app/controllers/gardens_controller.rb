@@ -1,10 +1,11 @@
 class GardensController < ApplicationController
   def index
-    @gardens = Garden.all
+    @gardens = policy_scope(Garden)
   end
 
   def show
     @garden = Garden.find(params[:id])
+    authorize @garden
   end
 
   def new
