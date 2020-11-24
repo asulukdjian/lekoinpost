@@ -30,15 +30,13 @@ class GardensController < ApplicationController
   def destroy
     @garden = Garden.find(params[:id])
     @garden.destroy
-
-    # no need for app/views/restaurants/destroy.html.erb
     redirect_to gardens_path
   end
 
   private
 
   def garden_params
-    params.require(:garden).permit(:address, :description, :rating)
+    params.require(:garden).permit(:address, :description)
   end
 
 end
