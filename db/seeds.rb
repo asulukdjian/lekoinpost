@@ -32,7 +32,8 @@ User.create!(
 )
 
 Garden.create!(
-    description: "Gaston's cité fertile", 
+    name: "Gaston's cité fertile",
+    description: "Jardin alternatif bio et collaboratif de Gaston", 
     address: "14 avenue Edouard Vaillant, Pantin", 
     user_id: User.last.id
   )
@@ -47,7 +48,8 @@ User.create!(
 )
 
 Garden.create!(
-    description: "Emilie's shared garden", 
+    name: "Emilie's shared garden",
+    description: "Jardin alternatif bio et collaboratif de Emilie", 
     address: "4 Rue Henri Barbusse, Aubervilliers", 
     user_id: User.last.id
   )
@@ -63,7 +65,8 @@ User.create!(
 )
 
 Garden.create!(
-    description: "Paul in Guinot garden", 
+    name: "Paul in Guinot garden",
+    description: "Jardin alternatif bio et collaboratif de Paul", 
     address: " 4 Rue Claude Guinot, Saint-Ouen", 
     user_id: User.last.id
   )

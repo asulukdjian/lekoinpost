@@ -3,10 +3,9 @@ class GardenPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-    
-    def show?
+  end
+
+  def show?
       return true
     end
-
-  end
 end
