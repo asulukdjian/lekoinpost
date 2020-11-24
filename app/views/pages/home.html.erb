@@ -1,12 +1,12 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'banner-image.jpg' %>');">
   <div class="banner-content">
-
     <h1>Transform your organic waste</h1>
     <p>Be friendly to the planet and get beautiful or eatable products in exchange</p>
     <div class="container">
       <%= render 'shared/search_bar_address_geocoded' %>
     </div>
-  </div>
+      <%= link_to "List of gardens (Provisoire)", gardens_path %>
+    </div>
 </div>
 <div class="container">
   <div class="row">
