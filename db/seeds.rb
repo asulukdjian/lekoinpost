@@ -75,25 +75,5 @@ puts "4 users created"
 puts "3 gardens created"
 
 
-# Garden.create!(
-#   description: "Gaston's cité fertile", 
-#   address: "14 avenue Edouard Vaillant, Pantin", 
-#   user_id: 
-# )
-# Garden.create!(
-#   description: "Emilie's shared garden", 
-#   address: "4 Rue Henri Barbusse, Aubervilliers", 
-#   user_id: 3
-# )
-
-# Garden.create!(
-#   description: "Paul in Guinot garden", 
-#   address: " 4 Rue Claude Guinot, Saint-Ouen", 
-#   user_id: 3
-# )
-
-# puts "3 gardens created"
-
-
 
 

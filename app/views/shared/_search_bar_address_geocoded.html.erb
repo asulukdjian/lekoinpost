@@ -1,13 +1,18 @@
 
-  <%= form_tag "#", method: :get do %>
-    <div class="search-form-control form-group">
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control string required",
-        id: "search_query",
-        placeholder: "Enter your home address",
-        height: "45px"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary", style:"margin-top: 10px; height: 44px; border-radius: 4px;" %>
+  <%= form_tag gardens_path, method: :get do %>
+    <div class="d-inline-flex align-content-center">
+      <div class="p-2 mt-0">
+        <div class="search-form-control form-group">
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control string required",
+            id: "search_query",
+            placeholder: "Enter an address",
+            height: "45px"%>
+        </div>
+      </div>
+      <div class="p-2 mt-0">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
     </div>
   <% end %>
