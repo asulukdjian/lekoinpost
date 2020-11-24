@@ -32,7 +32,8 @@ User.create!(
 )
 
 Garden.create!(
-    description: "Gaston's cité fertile", 
+    name: "Gaston's cité fertile",
+    description: "Jardin alternatif bio et collaboratif", 
     address: "14 avenue Edouard Vaillant, Pantin", 
     user_id: User.last.id
   )
