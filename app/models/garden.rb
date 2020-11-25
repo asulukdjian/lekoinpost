@@ -1,5 +1,6 @@
 class Garden < ApplicationRecord
   belongs_to :user
   has_many :appointments, dependent: :destroy
-  validates :description, :address, presence: true
+  validates :name, :description, :address, presence: true
+  has_many_attached :photos
 end

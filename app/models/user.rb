@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :appointments
   validates :first_name, :last_name, presence: true
+  has_one_attached :avatar
 
   def full_name
     "#{first_name} #{last_name}"
