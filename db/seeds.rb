@@ -101,6 +101,7 @@ puts "4 users created"
 puts "3 gardens created"
 
 
+
 # Garden.create!(
 #   description: "Gaston's cité fertile", 
 #   address: "14 avenue Edouard Vaillant, Pantin", 
@@ -123,7 +124,6 @@ puts "3 gardens created"
 
 # bundle install + rails db:migrate + tocken cloudinary à ajouter dans le fichier .env (à créer à la racine)
 # verifier que .env est caché dans le fichier .gitignore
-
 
 
 
