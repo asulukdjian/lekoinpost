@@ -1,6 +1,7 @@
 
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
 }
@@ -10,9 +11,9 @@
 
 }
 
-.garden-info {
-  padding: 20px;
-
+.card-garden {
+  border: thin solid black;
+  padding: 30px;
 }
 
 
