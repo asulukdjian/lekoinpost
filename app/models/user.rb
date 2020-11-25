@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :gardens
   has_many :reserved_gardens, through: :appointments, source: :garden
   validates :first_name, :last_name, presence: true
+  has_one_attached :avatar
 
   def full_name
     "#{first_name} #{last_name}"
