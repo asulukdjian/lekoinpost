@@ -1,0 +1,8 @@
+<h2>Book an appointment</h2>
+
+<%= simple_form_for([@garden, @appointment] ) do |f| %>
+  <%= f.input :date %>
+  <%= f.input :quantity  %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
