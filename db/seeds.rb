@@ -40,8 +40,8 @@ gaston.save!
 
 garden1 = Garden.new(
     name: "Gaston's cité fertile",
-    description: "Jardin alternatif bio et collaboratif de Gaston", 
-    address: "14 avenue Edouard Vaillant, Pantin", 
+    description: "Jardin alternatif bio et collaboratif de Gaston",
+    address: "14 avenue Edouard Vaillant, Pantin",
     user_id: User.last.id
   )
 file = URI.open('https://res.cloudinary.com/dwdtcwivm/image/upload/v1606303062/nszrel1m8z5rydbegptr.jpg')
@@ -64,8 +64,8 @@ emilie.save!
 
 garden2 = Garden.new(
     name: "Emilie's shared garden",
-    description: "Jardin alternatif bio et collaboratif de Emilie", 
-    address: "4 Rue Henri Barbusse, Aubervilliers", 
+    description: "Jardin alternatif bio et collaboratif de Emilie",
+    address: "4 Rue Henri Barbusse, Aubervilliers",
     user_id: User.last.id
   )
 file = URI.open('https://res.cloudinary.com/dwdtcwivm/image/upload/v1606303208/s7zwxddqjgmxhifddeuu.jpg')
