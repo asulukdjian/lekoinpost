@@ -22,8 +22,8 @@ clara = User.new(
   password_confirmation: "123456",
   address: "44 rue Ordener, Paris"
 )
-# file = URI.open('https://images.unsplash.com/photo-1520423465871-0866049020b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
-# clara.avatar.attach(io: file, filename: "Clara avatar.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1520423465871-0866049020b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
+clara.avatar.attach(io: file, filename: "Clara avatar.png", content_type: 'image/jpg')
 clara.save!
 
 gaston = User.new(
@@ -34,8 +34,8 @@ gaston = User.new(
   password_confirmation: "123456",
   address: "97, rue Lénine, Bagnolet"
 )
-# file = URI.open('https://images.unsplash.com/photo-1529928874840-505e8bf2b2a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
-# gaston.avatar.attach(io: file, filename: "Gaston avatar.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1529928874840-505e8bf2b2a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
+gaston.avatar.attach(io: file, filename: "Gaston avatar.png", content_type: 'image/jpg')
 gaston.save!
 
 garden1 = Garden.new(
@@ -44,10 +44,10 @@ garden1 = Garden.new(
     address: "14 avenue Edouard Vaillant, Pantin",
     user_id: User.last.id
   )
-# file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
-# garden1.photos.attach(io: file, filename: "Gaston cite fertile view.png", content_type: 'image/jpg')
-# file = URI.open('https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
-# garden1.photos.attach(io: file, filename: "Gaston cite fertile category.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
+garden1.photos.attach(io: file, filename: "Gaston cite fertile view.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+garden1.photos.attach(io: file, filename: "Gaston cite fertile category.png", content_type: 'image/jpg')
 garden1.save!
 
 emilie = User.new(
@@ -58,8 +58,8 @@ emilie = User.new(
   password_confirmation: "123456",
   address: "71 Rue Henri Langlois, Bobigny"
 )
-# file = URI.open('https://images.unsplash.com/photo-1592520113018-180c8bc831c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
-# emilie.avatar.attach(io: file, filename: "Emilie avatar.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1592520113018-180c8bc831c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
+emilie.avatar.attach(io: file, filename: "Emilie avatar.png", content_type: 'image/jpg')
 emilie.save!
 
 garden2 = Garden.new(
@@ -68,10 +68,10 @@ garden2 = Garden.new(
     address: "4 Rue Henri Barbusse, Aubervilliers",
     user_id: User.last.id
   )
-# file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
-# garden2.photos.attach(io: file, filename: "Emilie shared garden view.png", content_type: 'image/jpg')
-# file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
-# garden2.photos.attach(io: file, filename: "Emilie shared garden category.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
+garden2.photos.attach(io: file, filename: "Emilie shared garden view.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
+garden2.photos.attach(io: file, filename: "Emilie shared garden category.png", content_type: 'image/jpg')
 garden2.save!
 
 paul = User.new(
@@ -82,8 +82,8 @@ paul = User.new(
   password_confirmation: "123456",
   address: "71 Rue Henri Langlois, Bobigny"
 )
-# file = URI.open('https://images.unsplash.com/photo-1582804905556-0605e6433015?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
-# paul.avatar.attach(io: file, filename: "Paul avatar.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1582804905556-0605e6433015?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
+paul.avatar.attach(io: file, filename: "Paul avatar.png", content_type: 'image/jpg')
 paul.save!
 
 garden3 = Garden.new(
@@ -92,10 +92,10 @@ garden3 = Garden.new(
     address: " 4 Rue Claude Guinot, Saint-Ouen", 
     user_id: User.last.id
   )
-# file = URI.open('https://images.unsplash.com/photo-1539287916498-2a4ce855d2c5')
-# garden3.photos.attach(io: file, filename: "Paul municipal garden view.png", content_type: 'image/jpg')
-# file = URI.open('https://images.unsplash.com/photo-1487530903081-59e0e3331512')
-# garden3.photos.attach(io: file, filename: "Paul municipal garden category.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1539287916498-2a4ce855d2c5')
+garden3.photos.attach(io: file, filename: "Paul municipal garden view.png", content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1487530903081-59e0e3331512')
+garden3.photos.attach(io: file, filename: "Paul municipal garden category.png", content_type: 'image/jpg')
 garden3.save!
 
 puts "4 users created"
