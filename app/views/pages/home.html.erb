@@ -1,7 +1,13 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'banner-image.jpg' %>');">
+<div class="banner">
+  <!-- style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'home-banner.jpg' %>');"> -->
   <div class="banner-content">
-    <h1>Transform your organic waste</h1>
-    <p>Be friendly to the planet and get beautiful or delicious products in exchange</p>
+    <div class="title-box">
+        <h1>Transform your organic waste</h1>
+    </div>
+    <div>
+      <p>Be friendly to the planet and get beautiful or delicious products in exchange</p>
+    </div>
+
     <div class="container">
       <%= render 'shared/search_bar_address_geocoded' %>
     </div>
@@ -14,11 +20,12 @@
       <div class="card-home">
           <div class="center-icon">
             <div class="round-icon">
-              <%= image_tag 'question-mark.png' %>
+              <%#= image_tag 'question-mark.png' %>
             </div>
           </div>
           <div class="card-text">
-            <h1>Why</h1>
+            <h2>Why</h2>
+            <span></span>
             <p> We all want to find a way to reduce waste. One of the possibilities is to recycle and categorise our waste. You just have to put plastic and cardboard in the yellow bin, glass and metal in the green one and organic waste can be stored apart from your everyday waste and thrown away in a compost bin. But where does that content end up ? Is it any useful ? Can’t there be a way to actually use organic waste in the city ?</p>
           </div>
         </div>
@@ -27,11 +34,11 @@
       <div class="card-home">
           <div class="center-icon">
             <div class="round-icon">
-              <%= image_tag 'question-mark.png' %>
+              <%#= image_tag 'question-mark.png' %>
             </div>
           </div>
           <div class="card-text">
-            <h1>How</h1>
+            <h2>How</h2>
             <p> At Où Compost we think we have an answer. We will show you a list of urban gardens growing vegetables, fruits, plants and/or flowers in your neighbourhood. You then choose which one you would like to give your organic waste to and a meeting will be arranged so that you might drop it or ask for the owner to organise a pickup right from your place.</p>
           </div>
         </div>
@@ -40,11 +47,11 @@
       <div class="card-home">
           <div class="center-icon">
             <div class="round-icon">
-              <%= image_tag 'question-mark.png' %>
+              <%#= image_tag 'question-mark.png' %>
             </div>
           </div>
           <div class="card-text">
-            <h1>Incentive</h1>
+            <h2>Incentive</h2>
             <p> That’s the fun part : a win-win situation where the local gardens don’t have to rely that much on industrial compost and can save these costs and where you will be rewarded for your loyalty towards a given garden. Every garden owner can determine an amount of waste and an incentive for you to pick once that amount dropped.</p>
           </div>
         </div>
