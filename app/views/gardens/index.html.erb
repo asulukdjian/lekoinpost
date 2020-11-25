@@ -1,4 +1,4 @@
-<div class="container mb-5">
+<div class="container mb-5 mt-4">
   <div class="row justify-content-center">
       <%= render 'shared/search_bar_address_geocoded' %>
   </div>
@@ -6,6 +6,24 @@
 
 <div class="container">
   <div class="row justify-content-center">
+
+    <div class="col-6">
+      <div class="row">
+        <% @gardens.each do |garden| %>
+          <div class="col-6">
+            <div class="card-product">
+              <% if garden.photos.attached? %>
+                <%= cl_image_tag garden.photos.first.key, alt: "garden-photo" %>
+              <% end %>
+              <div class="card-product-infos">
+                <h2><%= link_to garden.name, garden_path(garden) %></h2>
+                <p><%= link_to garden.address, garden_path(garden) %></p>
+                <p>garden.user_id</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
     <div class="col-8">
       <div class="d-flex justify-content-between flex-wrap">
       <% @gardens.each do |garden| %>
@@ -19,6 +37,7 @@
           </div>
         </div>
       <% end %>
+
       </div>
     </div>
 
