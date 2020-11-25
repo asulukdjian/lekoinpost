@@ -12,8 +12,16 @@
       }
   p {
     font-family: $body-font;
-    text-align: center;
-    font-size: 20px;
+    font-size: 26px;
+  }
+}
+.card-home .round-icon {
+  border-radius: 50%;
+  border: 1px solid rgb(150, 150, 104);
+  height: 35px;
+  width: 35px;
+  img {
+    width: 100%;
   }
 }
 

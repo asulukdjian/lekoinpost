@@ -1,22 +1,27 @@
+
 <div class="container">
-<h2>Garden details</h2>
-<div class="flex-container">
-  <div class="card-carousel"><%= render 'shared/carousel.html.erb' %></div>
-  <div class="garden-info">
-  <div class="card-garden">
+  <h2>Garden details</h2>
+  <div class="flex-container">
+    <div class="card-garden">
+      <div class="avatar"></div>
       <div class="card-garden-owner"><p><strong>Garden owner : </strong><%= @garden.user.full_name %> </p></div>
       <div class="card-garden-address"><p><%= "Address: " %><%= @garden.address %></p></div>
       <div class="card-garden-description"><p><%= "Description: " %><%= @garden.description %></p></div>
-  </div>
+    </div>
+    <div>
+      <div class="card-garden-buttons">
+        <a class="btn btn-primary" href="<%= link_to "Back to gardens", gardens_path %></a>
 
-  <div class="card-garden-buttons">
-    <%= link_to "Back to gardens", gardens_path %>
-    <%#= link_to "Give your waste", appointments_path %>
+        <%#= link_to "Give your waste", appointments_path %>
+      </div>
+      <div id="map" class="card-garden-map" style="height: 150px; width: 150px"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
-  <div id="map" class="card-garden-map" style="height: 150px; width: 150px"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  </div>
+  <div class="card-carousel"><%= render 'shared/carousel.html.erb' %></div>
 </div>
-</div>
+<a href=""></a>
+
+
