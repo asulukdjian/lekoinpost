@@ -1,0 +1,17 @@
+<h2>My appointments</h2>
+
+<% @my_appointments.each do |appointment|  %>
+  <%= appointment.date %>
+  <%= appointment.quantity %>
+  <%= appointment.garden.description %>
+<% end %>
+
+<h2> My gardens</h2>
+
+<% @my_gardens.each do |garden| %>
+  <% garden.address %>
+  <% garden.description %>
+<% end %>
+
+
+
