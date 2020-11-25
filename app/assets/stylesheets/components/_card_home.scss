@@ -1,4 +1,4 @@
-.card-text {
+.card-home .card-text {
   background-color: beige;
   border: 1px solid beige;
   border-radius: 4px;
@@ -6,17 +6,18 @@
   padding: 30px;
   margin: 30px;
   width: 100%;
-  margin: 0 auto; 
+  margin: 0 auto;
   h1 {
     text-align: center;
   }
   p {
-    text-align: justify;
+    font-family: $body-font;
+    font-size: 26px;
   }
 }
-.round-icon {
+.card-home .round-icon {
   border-radius: 50%;
-  border: 1px solid rgb(150, 150, 104); 
+  border: 1px solid rgb(150, 150, 104);
   height: 35px;
   width: 35px;
   img {
@@ -24,7 +25,7 @@
   }
 }
 
-.center-icon {
+.card-home .center-icon {
   display: flex;
   justify-content: center;
   margin-bottom: -20px;
