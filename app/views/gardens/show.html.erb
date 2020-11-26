@@ -11,7 +11,7 @@
     <div>
       <div class="card-garden-buttons">
       <%= link_to "back to gardens", gardens_path, class: "btn btn-primary" %>
-        <%#= link_to "Give your waste", appointments_path %>
+      <%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary" %>
       </div>
       <div id="map" class="card-garden-map" style="height: 150px; width: 150px"
             data-markers="<%= @markers.to_json %>"
