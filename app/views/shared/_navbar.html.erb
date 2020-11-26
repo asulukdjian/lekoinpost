@@ -39,15 +39,14 @@
               <div class="modal-body">
                 <div class="container">
                   <%= simple_form_for (Garden.new) do |f| %>
-                    <%= f.input :name, label: "Enter the garden name" %>
-                    <%= f.input :description, label: "Enter the garden description"%>
-                    <%= f.input :address, label: "Enter the garden address" %>
-                    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                    <%= f.input :name, label: "Your garden name", placeholder: "My beautifuul garden" %>
+                    <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables"%>
+                    <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
+                    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos" ,hint: "You an add as many photos as you want. Select them all together" %>
                 </div>
               </div>
               <div class="modal-footer">
-                    <%= link_to "Back to garden's list", gardens_path %>
-                    <%= f.submit "Submit your garden", class: "btn btn-primary"%>
+                   <%= f.submit "Submit your garden", class: "btn btn-primary"%>
                   <% end %>
               </div>
             </div>
