@@ -4,11 +4,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 30px;
+  flex: 1 0 auto;
+  margin-top: 32px;
 
 }
 
 .card-carousel {
-  width: 62%;
+  margin-bottom: 20px;
+  margin-top: 32px;
 
 }
 
@@ -16,6 +19,17 @@
   position: relative;
   border: thin solid black;
   padding: 30px;
+
+
+  .avatar-card {
+  width: 88px;
+  height: 88px;
+  margin-right: auto;
+  position: absolute;
+  top: -35px;
+  right: -29px;
+  }
+
 }
 
 .card-garden-buttons {
@@ -24,11 +38,16 @@
 }
 
 .back-garden-button {
+  color: white;
   margin: 2px;
+  position: absolute;
+  left: -939px;
+  top: -20px;
 }
 
 .give-button {
-  margin: 2px;
+  padding: 30px;
 }
+
 
 

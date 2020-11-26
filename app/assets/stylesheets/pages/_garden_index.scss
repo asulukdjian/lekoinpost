@@ -1,7 +1,8 @@
-#map {
+
+
+#map.map-index {
+  border: 1px solid red;
   height: 70vh ;
   position: sticky;
   top: 90px;
-  text-align: center;  /* a enlever quand on aura la map */
-  border: 1px solid red;
 }
