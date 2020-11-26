@@ -1,0 +1,8 @@
+<%= f.input :name %>
+<%= f.input :category, collection: Product::CATEGORIES %>
+<%= f.input :reward_score %>
+<%= f.hidden_field :_destroy %>
+
+<%= remove_association(tag: :div) do %>
+  <i class="fas fa-trash"></i>
+<% end %>

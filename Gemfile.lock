@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    abyme (0.2.4)
     actioncable (6.0.3.4)
       actionpack (= 6.0.3.4)
       nio4r (~> 2.0)
@@ -259,6 +260,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  abyme
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
