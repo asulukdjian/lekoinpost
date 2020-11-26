@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 30px;
 
 }
 
@@ -12,8 +13,22 @@
 }
 
 .card-garden {
+  position: relative;
   border: thin solid black;
   padding: 30px;
+}
+
+.card-garden-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-garden-button {
+  margin: 2px;
+}
+
+.give-button {
+  margin: 2px;
 }
 
 
