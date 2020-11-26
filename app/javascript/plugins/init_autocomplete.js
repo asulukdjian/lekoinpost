@@ -5,6 +5,10 @@ const initAutocomplete = () => {
   if (addressInput) {
     places({ container: addressInput });
   }
+  const addressInputCreate = document.getElementById("garden_address");
+  if (addressInputCreate) {
+    places({ container: addressInputCreate });
+  }
 };
 
 export { initAutocomplete };
