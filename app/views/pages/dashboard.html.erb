@@ -1,17 +1,42 @@
-<h2>My appointments</h2>
+<div class="container">
+  <%= link_to "⬅ Search for gardens", gardens_path %>
+</div>
 
-<% @my_appointments.each do |appointment|  %>
-  <%= appointment.date %>
-  <%= appointment.quantity %>
-  <%= appointment.garden.description %>
-<% end %>
-
-<h2> My gardens</h2>
-
-<% @my_gardens.each do |garden| %>
-  <% garden.address %>
-  <% garden.description %>
-<% end %>
-
-
-
+<div class="container mt-2">
+  <div class="dashboard-content">
+    <div class="dashboard-appointments">
+      <h2>My appointments</h2>
+      <p>
+        <% @my_appointments.each do |appointment|  %>
+          <div class="card-appointment">
+              <% if appointment.garden.photos.attached? %>
+                <%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
+              <% end %>
+            <div class="card-appointment-infos">
+              <h2><%= appointment.garden.name %></h2>
+              <p><%= appointment.date %></p>
+              <p>Quantity : <%= appointment.quantity %> kg</p>
+            </div>
+          </div>
+        <% end %>
+      </p>
+    </div>
+    <div class="dashboard-gardens">
+      <h2>My gardens</h2>
+      <p>
+        <% @my_gardens.each do |garden| %>
+          <div class="card-appointment">
+              <% if garden.photos.attached? %>
+                <%= cl_image_tag garden.photos.first.key, class:"card-img" %>
+              <% end %>
+            <div class="card-appointment-infos">
+              <h2><%= garden.name %></h2>
+              <p> <%= garden.address %></p>
+              <p> <%= garden.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
