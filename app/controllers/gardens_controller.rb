@@ -4,6 +4,12 @@ class GardensController < ApplicationController
 
     if params[:query].present?
       @gardens = Garden.near(params[:query], 10)
+      query_lat = Geocoder.search(params[:query]).first.coordinates[0]
+      query_lon = Geocoder.search(params[:query]).first.coordinates[1]      
+      @hash_distance = {}
+      @gardens.each do |garden|
+        @hash_distance[garden.id.to_s] = Geocoder::Calculations.distance_between([query_lon, query_lat], [garden.longitude, garden.latitude])
+      end
     else
       @gardens = @gardens.where.not(latitude: nil, longitude: nil)
     end
