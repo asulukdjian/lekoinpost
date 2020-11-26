@@ -1,0 +1,10 @@
+<div class="container">
+  <%= simple_form_for (@garden) do |f| %>
+    <%= f.input :name, label: "Enter the garden name" %>
+    <%= f.input :description, label: "Enter the garden description"%>
+    <%= f.input :address, label: "Enter the garden address" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Submit your garden", class: "btn btn-primary"%>
+  <% end %>
+  <%= link_to "Back to cocktails list", gardens_path %>
+</div>

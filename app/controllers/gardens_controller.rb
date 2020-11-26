@@ -3,7 +3,7 @@ class GardensController < ApplicationController
     @gardens = policy_scope(Garden)
 
     if params[:query].present?
-      @gardens = Garden.near(params[:query], 1)
+      @gardens = Garden.near(params[:query], 10)
     else
       @gardens = @gardens.where.not(latitude: nil, longitude: nil)
     end
@@ -31,13 +31,19 @@ class GardensController < ApplicationController
   end
 
   def new
-    @garden = Garden.new
+    @garden = current_user.gardens.new
+    authorize @garden
   end
 
   def create
-    @garden = Garden.new(params[:garden])
-    @garden.save
-    redirect_to garden_path
+    @garden = Garden.new(garden_params)
+    @garden.user = current_user
+    authorize @garden
+    if @garden.save
+      redirect_to garden_path(@garden)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -59,7 +65,6 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:address, :description)
+    params.require(:garden).permit(:name, :address, :description, photos: [] )
   end
-
 end
