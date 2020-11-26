@@ -1,0 +1,19 @@
+
+  <%= form_tag gardens_path, method: :get do %>
+    <div class="d-inline-flex align-content-center w-75">
+      <div class="p-2 mt-0 flex-grow-1">
+        <div class="search-form-control form-group" id="search-bar-home">
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control string required",
+            id: "search_query",
+            placeholder: "Enter an address",
+            height: "45px"%>
+        </div>
+      </div>
+      <div class="p-2 mt-0">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+
