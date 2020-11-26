@@ -19,12 +19,27 @@
 }
 
 
+.title-box {
+  position: relative;
+  z-index: 0;
+  &:after {
+    position: absolute;
+    content: "";
+    background: $info;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    filter: blur(3px);
+    border-radius: 10px;
+  }
+  h1 {
 
-.title-box h1 {
-background-color: rgba(246, 194, 60, 0.8);
-border-radius: 5px;
-padding: 5px 15px 10px 15px;
+    padding: 5px 15px 10px 15px;
+  }
 }
+
 
 
 .banner p {
@@ -34,3 +49,4 @@ padding: 5px 15px 10px 15px;
   opacity: 0.8;
   margin-bottom: 30px;
 }
+
