@@ -16,6 +16,9 @@
             <p><%= garden.address%></p>
             <p>John Do
             📍1,3 km</p>
+            <% if @hash_distance && @hash_distance[garden.id.to_s] %>
+            <%= @hash_distance[garden.id.to_s].truncate(2) %>
+            <% end %>
           </div>
         </div>
       <% end %>
