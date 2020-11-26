@@ -16,9 +16,44 @@
       <% if user_signed_in? %>
         <li class="nav-item">
           <% if policy(Garden).create? %>
-              <%= link_to 'Create my garden', new_garden_path, class: "btn btn-primary" %>
+              <%#= link_to 'Create my garden', new_garden_path, class: "btn btn-primary" %>
+              <div class="btn btn-primary" data-toggle="modal" data-target="#newGardenModal">Create my garden</div>
           <% end %>
         </li>
+
+
+      <!-- Button trigger modal -->
+        <%# <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Launch demo modal
+        </button> %>
+        <!-- Modal -->
+        <div class="modal fade" id="newGardenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create your garden</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <%= simple_form_for (Garden.new) do |f| %>
+                    <%= f.input :name, label: "Enter the garden name" %>
+                    <%= f.input :description, label: "Enter the garden description"%>
+                    <%= f.input :address, label: "Enter the garden address" %>
+                    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                    <%= link_to "Back to garden's list", gardens_path %>
+                    <%= f.submit "Submit your garden", class: "btn btn-primary"%>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+       <!-- End Modal -->
         <li class="nav-item dropdown">
           <%= image_tag 'clara.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
