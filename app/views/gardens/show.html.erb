@@ -1,17 +1,16 @@
 
 <div class="container">
-  <h2>Garden details</h2>
   <div class="flex-container">
     <div class="card-garden">
-      <div class="avatar"></div>
+      <%= image_tag 'gaston.jpg', class: "avatar-card" %>
       <div class="card-garden-owner"><p><strong>Garden owner : </strong><%= @garden.user.full_name %> </p></div>
       <div class="card-garden-address"><p><%= "Address: " %><%= @garden.address %></p></div>
       <div class="card-garden-description"><p><%= "Description: " %><%= @garden.description %></p></div>
     </div>
     <div>
       <div class="card-garden-buttons">
-      <%= link_to "back to gardens", gardens_path, class: "btn btn-primary" %>
-      <%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary" %>
+      <div class="back-garden-button"><%= link_to "back to gardens", gardens_path, class: "btn btn-primary" %></div>
+      <div class="give-button"><%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary" %></div>
       </div>
       <div id="map" class="card-garden-map" style="height: 150px; width: 150px"
             data-markers="<%= @markers.to_json %>"
@@ -22,12 +21,4 @@
   <div class="card-carousel"><%= render 'shared/carousel.html.erb' %></div>
 </div>
 <a href=""></a>
-<p>photo</p>
-<% @garden.photos.each do |photo| %>
-  <div class="carousel-item active"> 
-    <div class="d-block w-100">
-      <%= cl_image_tag @garden.photo.key, height: 300, width: 400, crop: :fill %>
-  </div>
-<% end %>
-
 
