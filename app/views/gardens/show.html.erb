@@ -9,6 +9,12 @@
         <div class="card-garden-description"><p><strong> Description: </strong><%= @garden.description %></p></div>
       </div>
     </div>
+    <div class="card-products">
+      <p><strong>Products: </strong></p>
+      <% @garden.products.each do |product| %>
+      <p><%= product.name %></p>
+    <% end %>
+    </div>
     <div class="col-4">
       <div>
           <!-- Modal -->
