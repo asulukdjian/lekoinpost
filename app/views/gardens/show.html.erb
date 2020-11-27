@@ -4,7 +4,7 @@
     <div class="row pt-5 justify-content-between">
       <div class="col-4">
         <div class="card-garden">
-          <%= image_tag 'gaston.jpg', class: "avatar-card rounded-circle" %>
+          <%= cl_image_tag @garden.user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.5", class: "avatar-card rounded-circle" %>
           <div class="card-garden-owner"><p><strong>Garden owner : </strong><%= @garden.user.full_name %> </p></div>
           <div class="card-garden-address"><p><%= "Address: " %><%= @garden.address %></p></div>
           <div class="card-garden-description"><p><%= "Description: " %><%= @garden.description %></p></div>
