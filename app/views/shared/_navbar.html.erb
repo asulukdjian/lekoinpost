@@ -42,7 +42,7 @@
                     <%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden" %>
                     <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables"%>
                     <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
-                    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos" ,hint: "You an add as many photos as you want. Select them all together" %>
+                    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos", hint: "You an add as many photos as you want. Select them all together" %>
                     <h2 id="h2-abyme">Add some products</h2>
                       <%= abymize(:products, f) do |abyme| %>
                         <%= abyme.records %>
