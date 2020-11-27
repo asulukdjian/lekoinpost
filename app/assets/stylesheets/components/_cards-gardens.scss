@@ -35,6 +35,10 @@
   border: thin solid black;
   padding: 30px;
   border-radius: 10px;
+  border-radius: 5px;
+  border: 0.5px solid $primary;
+  box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
+  background: white;
   &:after {
     content: "";
     position: absolute;
@@ -78,8 +82,8 @@
   color: white;
   margin: 2px;
   position: absolute;
-  left: -939px;
-  top: -20px;
+  left: 5px;
+  top: 70px;
 }
 
 .give-button {
