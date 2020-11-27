@@ -7,6 +7,7 @@
     <div class="dashboard-appointments">
     <% if current_user.gardens.any? %>
       <h2>My reservations</h2>
+      <p>
       <% current_user.reservations.each do |appointment| %>
         <div class="card-appointment">
           <% if appointment.garden.photos.attached? %>
@@ -20,6 +21,7 @@
           </div>
         </div>
       <% end %>
+      </p>
     <% else %>
       <h2>My appointments</h2>
       <p>
