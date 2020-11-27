@@ -43,6 +43,12 @@
                     <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables"%>
                     <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
                     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos" ,hint: "You an add as many photos as you want. Select them all together" %>
+                    <h2>Add some products</h2>
+                      <%= abymize(:products, f) do |abyme| %>
+                        <%= abyme.records %>
+                        <%= abyme.new_records %>
+                        <%= add_association(content: "Add a product", html: { class: 'btn btn-info mb-3'}) %>
+                      <% end %>
                 </div>
               </div>
               <div class="modal-footer">
