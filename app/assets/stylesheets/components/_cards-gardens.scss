@@ -90,5 +90,13 @@
   padding: 30px;
 }
 
+.card-products {
+  padding: 30px;
+  border-radius: 10px;
+  background: $yellow;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
 
 
