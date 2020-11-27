@@ -48,8 +48,9 @@ class GardensController < ApplicationController
     if @garden.save
       redirect_to garden_path(@garden)
     else
-      render :new
       flash[:notice] = "Warning, we encountered a problem creating your garden, please review the form."
+      render :new
+      flash[:notice] = nil
     end
   end
 
