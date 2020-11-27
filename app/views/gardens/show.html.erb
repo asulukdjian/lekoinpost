@@ -1,17 +1,16 @@
-
 <div class="container">
-  <!-- <div class="flex-container"> -->
-    <div class="row pt-5 justify-content-between">
-      <div class="col-4">
-        <div class="card-garden">
-          <%= cl_image_tag @garden.user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.5", class: "avatar-card rounded-circle" %>
-          <div class="card-garden-owner"><p><strong>Garden owner : </strong><%= @garden.user.full_name %> </p></div>
-          <div class="card-garden-address"><p><%= "Address: " %><%= @garden.address %></p></div>
-          <div class="card-garden-description"><p><%= "Description: " %><%= @garden.description %></p></div>
-        </div>
+  <div class="row pt-5 justify-content-between">
+    <div class="col-4">
+      <div class="card-garden">
+        <%= cl_image_tag @garden.user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.5", class: "avatar-card rounded-circle" %>
+        <div class="card-garden-owner"><p><strong>Garden owner : </strong><%= @garden.user.full_name %> </p></div>
+        <div class="card-garden-name"><p><strong> Name: </strong><%= @garden.name %></p></div>
+        <div class="card-garden-address"><p><strong> Address: </strong><%= @garden.address %></p></div>
+        <div class="card-garden-description"><p><strong> Description: </strong><%= @garden.description %></p></div>
       </div>
-      <div class="col-4">
-        <div>
+    </div>
+    <div class="col-4">
+      <div>
           <!-- Modal -->
         <div class="modal fade" id="newAppointmentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -22,15 +21,15 @@
                 </button>
               </div>
               <%= simple_form_for([@garden, Appointment.new] ) do |f| %>
-              <div class="modal-body">
-                <div class="container">
-                  <h2>Book an appointment</h2>
-                  <%= f.input  :date, as: :string, required: false, input_html: {id: "appointment_date"} %>
-                  <%= f.label :quantity %>
-                  <%= f.select :quantity, Array(1..10) %> kg<br>
-                  <%= f.label :description %>
-                  <%= f.select :description, ["Organic waste", "Compost"] %>
-                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <h2>Book an appointment</h2>
+                    <%= f.input  :date, as: :string, required: false, input_html: {id: "appointment_date"} %>
+                    <%= f.label :quantity %>
+                    <%= f.select :quantity, Array(1..10) %> kg<br>
+                    <%= f.label :description %>
+                    <%= f.select :description, ["Organic waste", "Compost"] %>
+                  </div>
                 </div>
                 <div class="modal-footer">
                   <%= f.submit "Book your appointment", class: "btn btn-primary"%>
@@ -40,23 +39,22 @@
           </div>
         </div>
        <!-- End Modal -->
-          <div class="card-garden-buttons">
-            <div class="give-button"><%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %></div>
-          </div>
+        <div class="card-garden-buttons">
+          <div class="give-button"><%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %></div>
+        </div>
 
-          <div id="map" class="card-garden-map" style="height: 250px; width: 400px"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
-            <div class="back-garden-button"><%= link_to "back to gardens", gardens_path, class: "btn btn-info", id: "btn-back" %></div>
+        <div id="map" class="card-garden-map" style="height: 250px; width: 400px"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-6">
-        <div class="card-carousel"><%= render 'shared/carousel.html.erb' %></div>
-      </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card-carousel"><%= render 'shared/carousel.html.erb' %></div>
     </div>
-  <!-- </div> -->
+  </div>
+  <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>
 </div>
 
