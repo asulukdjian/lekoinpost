@@ -1,12 +1,12 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide round" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
+  <div class="carousel-inner rounded">
     <% @garden.photos.each do |photo| %>
-      <div class="carousel-item <%= "active" if @garden.photos.first == photo %>"> 
+      <div class="carousel-item <%= "active" if @garden.photos.first == photo %>">
           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "d-block w-100" %>
       </div>
     <% end %>
