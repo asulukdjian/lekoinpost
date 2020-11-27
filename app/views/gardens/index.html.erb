@@ -10,7 +10,7 @@
       <div class="d-flex justify-content-between flex-wrap">
       <% @gardens.each do |garden| %>
         <div class="card-product">
-          <%= image_tag "https://images.unsplash.com/photo-1572085313466-6710de8d7ba3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80", alt: "garden-photo" %>
+          <%= cl_image_tag garden.photos.first.key, alt: "garden-photo" %>
           <div class="card-product-infos">
             <h2><%= link_to garden.name, garden_path(garden) %></h2>
             <p><%= garden.address%></p>
