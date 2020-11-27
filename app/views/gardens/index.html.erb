@@ -13,8 +13,8 @@
           <%= cl_image_tag garden.photos.first.key, alt: "garden-photo" %>
           <div class="card-product-infos">
             <h2><%= link_to garden.name, garden_path(garden) %></h2>
-            <p><%= garden.address.delete_suffix(", Île-de-France, France")%></p>
-            <p><%= garden.name %><p>
+            <p>📪 <%= garden.address.delete_suffix(", Île-de-France, France")%></p>
+            <p>👩‍🦰👨‍🦰 <%= garden.user.full_name %><p>
             <p><% if @hash_distance && @hash_distance[garden.id.to_s] %>
             <span>📍 </span><%= @hash_distance[garden.id.to_s].truncate(2)%><span> km</span>
             <% end %> </p>
