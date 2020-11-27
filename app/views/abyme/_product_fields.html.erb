@@ -1,6 +1,6 @@
 <%= f.input :name %>
-<%= f.input :category, collection: Product::CATEGORIES %>
-<%= f.input :reward_score %>
+<%= f.input :category, collection: Product::CATEGORIES, selected: 1 %>
+<%= f.input :reward_score, collection: 1..10, selected: 1 %>
 <%= f.hidden_field :_destroy %>
 
 <%= remove_association(tag: :div) do %>
