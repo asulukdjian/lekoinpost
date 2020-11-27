@@ -12,4 +12,9 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def reservations
+    gardens.flat_map(&:appointments)
+  end
+
 end

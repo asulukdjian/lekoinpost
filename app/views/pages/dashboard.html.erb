@@ -5,6 +5,22 @@
 <div class="container mt-2">
   <div class="dashboard-content">
     <div class="dashboard-appointments">
+    <% if current_user.gardens.any? %>
+      <h2>My reservations</h2>
+      <% current_user.reservations.each do |appointment| %>
+        <div class="card-appointment">
+          <% if appointment.garden.photos.attached? %>
+            <%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
+          <% end %>
+          <div class="card-appointment-infos">
+            <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
+            <p>📅  <%= appointment.date.strftime("%b %d, %Y") %></p>
+            <p>🕗  <%= appointment.date.strftime("%H:%M") %></p>
+            <p>🥕  <%= appointment.quantity %> kg</p>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
       <h2>My appointments</h2>
       <p>
         <% @my_appointments.each do |appointment|  %>
@@ -21,6 +37,9 @@
           </div>
         <% end %>
       </p>
+    <% end %>
+
+
     </div>
     <% unless current_user.gardens.empty? %>
       <div class="dashboard-gardens">
