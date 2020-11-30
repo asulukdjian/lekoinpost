@@ -56,11 +56,13 @@ class GardensController < ApplicationController
 
   def edit
     @garden = Garden.find(params[:id])
+    authorize @garden
   end
 
   def update
     @garden = Garden.find(params[:id])
-    @garden.update(params[:garden])
+    authorize @garden
+    @garden.update(garden_params)
     redirect_to garden_path(@garden)
   end
 
