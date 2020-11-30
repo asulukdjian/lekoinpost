@@ -1,0 +1,5 @@
+meta_product_name: "Où Compost"
+meta_title: "Où Compost - Transform your organic waste"
+meta_description: "Be friendly to the planet and get beautiful or delicious products in exchange"
+meta_image: "home-banner.jpg" # should exist in `app/assets/images/`
+twitter_account: "@OuCompost"   # required for Twitter Cards
