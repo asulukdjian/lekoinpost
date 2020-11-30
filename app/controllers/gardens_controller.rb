@@ -76,6 +76,6 @@ class GardensController < ApplicationController
 
   def garden_params
     params.require(:garden).permit(:name, :address, :description, photos: [],
-      products_attributes: [:id, :name, :category, :reward_score, :_destroy])
+      products_attributes: [:id, :name, :category, :_destroy])
   end
 end

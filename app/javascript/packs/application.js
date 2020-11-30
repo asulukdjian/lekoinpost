@@ -28,6 +28,8 @@ import "controllers"
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initFlatpickr } from '../plugins/init_flatpickr';
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,4 +40,13 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#map")) initMapbox();
   if (document.querySelector("#search_query") || document.querySelector("#garden_address")) initAutocomplete();
   if (document.querySelector("#appointment_date")) initFlatpickr();
+
+  const calendarEl = document.querySelector('.gardenCalendar');
+  const events = JSON.parse(calendarEl.dataset.events)
+  const calendar = new Calendar(calendarEl, {
+    plugins: [dayGridPlugin],
+    events: events
+  });
+  calendar.render();
+
 });
