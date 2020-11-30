@@ -12,4 +12,17 @@ class Garden < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   abyme_for :products
+
+  def score_for(user)
+    # appointments.where(user: user).map(&:score).compact.sum
+
+    user_appointments = appointments.where(user: user)
+    # user_appointments.map(&:score)
+
+    user_scores = user_appointments.map do |app|
+      app.score
+    end
+
+    return user_scores.compact.sum
+  end
 end
