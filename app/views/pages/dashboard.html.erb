@@ -43,14 +43,23 @@
               <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
               <p>📅  <%= appointment.date.strftime("%b %d, %Y") %></p>
               <p>🕗  <%= appointment.date.strftime("%H:%M") %></p>
-              <p>🥕  <%= appointment.quantity %> kg</p>
+              <p>🧺  <%= appointment.quantity %> kg</p>
+              <% if policy(appointment).edit? %>
+                <span>🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
+              <% end %>
+              <% if policy(appointment).destroy? %>
+                <span>❌<%= link_to "delete", 
+                  appointment_path(appointment),
+                  method: :delete,
+                  data: { confirm: "Are you sure?"
+                  } %></span>
+              <% end %>
             </div>
           </div>
         <% end %>
       </p>
     <% end %>
     </div>
-
     <% end %>
   </div>
   <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>

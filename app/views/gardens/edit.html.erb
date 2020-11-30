@@ -1,0 +1,22 @@
+<div class="container">
+
+<h2>Edit your Garden</h2>
+
+<%= simple_form_for(@garden) do |f| %>
+  <%= f.input :name, label: "Enter the garden name" %>
+  <%= f.input :description, label: "Enter the garden description"%>
+  <%= f.input :address, label: "Enter the garden address" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
+    <h2>Add some products</h2>
+    <%= abymize(:products, f) do |abyme| %>
+      <%= abyme.records %>
+      <%= abyme.new_records %>
+      <%= add_association(content: "Add a product", html: { class: 'btn btn-info mb-3'}) %>
+    <% end %>
+
+    <%= f.submit "Submit your garden", class: "btn btn-primary"%>
+  <% end %>
+  <%= link_to "Go back", dashboard_path %>
+</div>
+</div>
