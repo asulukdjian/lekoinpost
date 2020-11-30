@@ -34,9 +34,17 @@
               <p>🧺  <%= appointment.quantity %> kg</p>
             </div>
           </div>
+          <% if policy(appointment).destroy? %>
+            <%= link_to "delete this appointment", 
+              appointment_path(appointment),
+              class: "btn btn-primary",
+              method: :delete,
+              data: { confirm: "Are you sure?"
+              } %>
+          <% end %>
         <% end %>
       </p>
-    <% end %>
+      <% end %>
 
     </div>
     <% unless current_user.gardens.empty? %>
