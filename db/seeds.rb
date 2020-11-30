@@ -70,7 +70,7 @@ emilie.save!
 garden2 = Garden.new(
     name: "Le jardin d'Emilie",
     description: "Jardin alternatif bio et collaboratif de quartier",
-    address: "4 Rue Henri Barbusse, Aubervilliers",
+    address: "4 Rue Henri Barbusse, 93300 Aubervilliers",
     user_id: User.last.id
   )
 file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
