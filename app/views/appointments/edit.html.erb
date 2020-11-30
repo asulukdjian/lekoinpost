@@ -1,6 +1,6 @@
 <div class="container">
-  <h2>Book an appointment</h2>
-  <%= simple_form_for([@garden, Appointment.new] ) do |f| %>
+  <h2>Update an appointment</h2>
+  <%= simple_form_for([@garden, @appointment] ) do |f| %>
   <%= f.input  :date, as: :string, required: false, input_html: {id: "appointment_date"} %>
   <%= f.label :quantity %>
   <%= f.select :quantity, Array(1..10) %> kg<br>
@@ -9,4 +9,3 @@
   <%= f.submit class: 'btn btn-primary' %>
   <% end %>
 </div>
-

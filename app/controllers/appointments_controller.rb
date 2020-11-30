@@ -19,6 +19,23 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def edit
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+
+    if @appointment.update(appointment_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+      flash[:notice] = "Warning, your appointment didn't go through, please review the form."
+    end
+  end
+
   def destroy
     @appointment = Appointment.find(params[:id])
     authorize @appointment
