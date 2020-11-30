@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_154551) do
+ActiveRecord::Schema.define(version: 2020_11_30_161709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 2020_11_26_154551) do
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "messages"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "appointment_id", null: false
+    t.index ["appointment_id"], name: "index_chatrooms_on_appointment_id"
+  end
+
   create_table "gardens", force: :cascade do |t|
     t.string "address"
     t.string "description"
@@ -60,6 +68,16 @@ ActiveRecord::Schema.define(version: 2020_11_26_154551) do
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_gardens_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -90,6 +108,9 @@ ActiveRecord::Schema.define(version: 2020_11_26_154551) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "gardens"
   add_foreign_key "appointments", "users"
+  add_foreign_key "chatrooms", "appointments"
   add_foreign_key "gardens", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "products", "gardens"
 end
