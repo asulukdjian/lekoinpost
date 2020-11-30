@@ -17,7 +17,7 @@
             <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %></p>
             <p>🕗  <%= appointment.date.strftime("%H:%M") %></p>
-            <p>🥕  <%= appointment.quantity %> kg</p>
+            <p>🧺  <%= appointment.quantity %> kg</p>
           </div>
         </div>
       <% end %>
@@ -34,13 +34,12 @@
               <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
               <p>📅  <%= appointment.date.strftime("%b %d, %Y") %></p>
               <p>🕗  <%= appointment.date.strftime("%H:%M") %></p>
-              <p>🥕  <%= appointment.quantity %> kg</p>
+              <p>🧺  <%= appointment.quantity %> kg</p>
             </div>
           </div>
         <% end %>
       </p>
     <% end %>
-
 
     </div>
     <% unless current_user.gardens.empty? %>
