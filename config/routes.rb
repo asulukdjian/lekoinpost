@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :gardens do
     resources :appointments, only: [ :new, :create ]
   end
+  resources :appointments, only: [ :destroy ]
+
   get '/dashboard', to: 'pages#dashboard'
 end

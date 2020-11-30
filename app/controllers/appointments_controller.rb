@@ -19,6 +19,15 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @garden = @appointment.garden
+    @appointment.user = current_user
+    @appointment.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def appointment_params
