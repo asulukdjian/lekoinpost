@@ -30,6 +30,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { initChatroomCable } from '../channels/chatroom_channel';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -49,5 +50,5 @@ document.addEventListener('turbolinks:load', () => {
     firstDay: 1
   });
   calendar.render();
-
+  initChatroomCable();
 });

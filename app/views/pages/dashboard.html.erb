@@ -61,3 +61,6 @@
   </div>
   <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>
 </div>
+<% @chatrooms.each do |chatroom|%>
+  <%= link_to "Chat with X", chatroom_path(chatroom) %>
+<% end %>
