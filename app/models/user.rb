@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :appointments
   has_many :gardens
+  has_many :appointments_for_gardens, through: :gardens, source: :appointments
   has_many :reserved_gardens, through: :appointments, source: :garden
   validates :first_name, :last_name, presence: true
   has_one_attached :avatar

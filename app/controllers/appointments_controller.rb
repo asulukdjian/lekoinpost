@@ -47,6 +47,38 @@ class AppointmentsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def accept
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.status = "accepted"
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
+  def refuse
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.status = "refused"
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
+  def deliver
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.delivered = true
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
+  def canceldeliver
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.delivered = false
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
   private
 
   def appointment_params

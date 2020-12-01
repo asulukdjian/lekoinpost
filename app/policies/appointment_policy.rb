@@ -15,4 +15,20 @@ class AppointmentPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def accept?
+    record.garden.user == user
+  end
+
+  def refuse?
+    record.garden.user == user
+  end
+
+  def deliver?
+    record.garden.user == user
+  end
+
+  def canceldeliver?
+    deliver?
+  end
 end
