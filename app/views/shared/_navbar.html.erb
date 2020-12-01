@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
   <div class="logo">
-    <%= image_tag "logo-ou-compost.png" %>
+    <%= image_tag "logo-ou-compost-3.png" %>
   </div>
   <% end %>
 
@@ -37,7 +37,7 @@
               </div>
               <div class="modal-body">
                 <%= simple_form_for (Garden.new) do |f| %>
-                  <div class= "d-flex" id="modal-input"> 
+                  <div class= "d-flex" id="modal-input">
                     <%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden", wrapper_html: {class: "input-class"}  %>
                     <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables", wrapper_html: {class: "input-class"} %>
                     <%= f.input :reward_score, label: "Reward score", prompt: "Points to be granted an award", collection: 15..40, wrapper_html: {class: "input-class"}  %>
