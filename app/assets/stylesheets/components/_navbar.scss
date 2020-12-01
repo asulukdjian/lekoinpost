@@ -42,8 +42,21 @@ justify-content: space-between;
 }
 
 #modal-input-abyme {
-  justify-content: space-between;
+  .width-input {
+    width: 14rem;
   }
+  i {
+    width: 11rem;
+    text-align: center;
+  }
+}
 .input-class {
 width: 33%;
 } 
+#abyme--products {
+  display: flex;
+  align-items: flex-end;
+  // justify-content: space-evenly;
+  width: 100%;
+}
+

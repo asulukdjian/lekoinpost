@@ -41,12 +41,12 @@
                   <div class= "d-flex" id="modal-input"> 
                     <%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden", wrapper_html: {class: "input-class"}  %>
                     <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables", wrapper_html: {class: "input-class"} %>
-                    <%= f.input :reward_score, label: "Reward score", placeholder: "Select number of points for user to gain an award", collection: 15..40, wrapper_html: {class: "input-class"}  %>
+                    <%= f.input :reward_score, label: "Reward score", prompt: "Points to be granted an award", collection: 15..40, wrapper_html: {class: "input-class"}  %>
                   </div>
                   <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
                  
-                  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos", hint: "You an add as many photos as you want. Select them all together" %>
-                  <h2 id="h2-abyme">Add some products</h2>
+                  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos", hint: "You can add as many photos as you want. Select them all together" %>
+                  <h2 id="h2-abyme"><strong>Add products to your garden</strong></h2>
                     <div class="d-flex" id="modal-input-abyme">
                       <%= abymize(:products, f, min_count: 1) do |abyme| %>
                         <%= abyme.records %>
