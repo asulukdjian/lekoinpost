@@ -3,7 +3,7 @@ class GardensController < ApplicationController
     @gardens = policy_scope(Garden)
 
     if params[:query].present?
-      @gardens = Garden.near(params[:query], 10)
+      @gardens = Garden.near(params[:query], 10, units: :km)
       query_lat = Geocoder.search(params[:query]).first.coordinates[0]
       query_lon = Geocoder.search(params[:query]).first.coordinates[1]
       @hash_distance = {}
@@ -45,7 +45,7 @@ class GardensController < ApplicationController
     @garden = Garden.new(garden_params)
     @garden.user = current_user
     authorize @garden
-    if @garden.save
+    if @garden.save!
       redirect_to garden_path(@garden)
     else
       flash[:notice] = "Warning, we encountered a problem creating your garden, please review the form."
@@ -75,7 +75,7 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :address, :description, photos: [],
+    params.require(:garden).permit(:name, :address, :reward_score, :description, photos: [],
       products_attributes: [:id, :name, :category, :_destroy])
   end
 end

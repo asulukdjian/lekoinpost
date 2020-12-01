@@ -3,12 +3,12 @@
 <h2>Edit your Garden</h2>
 
 <%= simple_form_for(@garden) do |f| %>
-  <%= f.input :name, label: "Enter the garden name" %>
-  <%= f.input :description, label: "Enter the garden description"%>
-  <%= f.input :address, label: "Enter the garden address" %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-
-    <h2>Add some products</h2>
+  <%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden" %>
+    <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables"%>
+    <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
+    <%= f.input :reward_score, label: "Reward score", hint: "Select number of points for user to gain an award", collection: 15..40, selected: 1 %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos" %>
+    <h2 id="h2-abyme">Add some products</h2>
     <%= abymize(:products, f) do |abyme| %>
       <%= abyme.records %>
       <%= abyme.new_records %>
