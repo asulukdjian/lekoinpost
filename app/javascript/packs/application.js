@@ -45,7 +45,8 @@ document.addEventListener('turbolinks:load', () => {
   const events = JSON.parse(calendarEl.dataset.events)
   const calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin],
-    events: events
+    events: events,
+    firstDay: 1
   });
   calendar.render();
 
