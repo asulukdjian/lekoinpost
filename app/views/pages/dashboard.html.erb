@@ -1,7 +1,5 @@
-
 <div class="container mt-2">
   <div class="dashboard-content">
-
     <% unless current_user.gardens.empty? %>
       <div class="dashboard-gardens">
         <h2>My gardens</h2>
@@ -25,7 +23,6 @@
           <h2>Reservations checklist</h2>
           <% current_user.gardens.each do |garden| %>
             <h6><%= garden.name %></h6>
-
             <% current_user.appointments_for_gardens.where.not(status:"refused").each do |appointment_for_gardens| %>
               <% if appointment_for_gardens.delivered == nil %>
                 <div class="card-reservation">
@@ -51,7 +48,6 @@
         </p>
       </div>
     <% end %>
-
     <div class="dashboard-appointments">
       <% if current_user.gardens.any? %>
         <h2>Reservations agenda</h2>
@@ -60,41 +56,8 @@
         </p>
       <% else %>
       <%= render partial: "pages/dashboard_partial/dashboard_clara", locals:{appointments: @my_appointments}%>
-<!--         <h2>My appointments</h2>
-        <p>
-          <#% @my_appointments.each do |appointment|  %>
-            <div class="card-appointment">
-              <#% if appointment.garden.photos.attached? %>
-                <#%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
-              <#% end %>
-              <div class="card-appointment-infos">
-                <h2><#%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
-                <p>📅  <#%= appointment.date.strftime("%b %d, %Y") %>
-                🕗  <#%= appointment.date.strftime("%H:%M") %></p>
-                <p>🧺  <#%= appointment.quantity %> kg of <%= appointment.description %></p>
-                <#% if policy(appointment).edit? %>
-                  <span>🖍 <#%= link_to "Modify", edit_appointment_path(appointment) %></span>
-                <#% end %>
-                <#% if policy(appointment).destroy? %>
-                  <span>❌<#%= link_to "delete",
-                    appointment_path(appointment),
-                    method: :delete,
-                    data: { confirm: "Are you sure?"
-                    } %></span>
-
-                <% end %>
-                <% if appointment.chatroom %>
-                  <%= link_to "Chat", chatroom_path(appointment.chatroom) %>
-                <% end %>
-
-              </div>
-            </div>
-          <#% end %>
-        </p> -->
       <% end %>
     </div>
-
   </div>
   <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>
 </div>
-
