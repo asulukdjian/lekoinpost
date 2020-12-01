@@ -19,12 +19,41 @@
             </div>
           <% end %>
         </p>
+        <br>
+        <p>
+          <h2>Reservations checklist</h2>
+          <% current_user.gardens.each do |garden| %>
+            <h6><%= garden.name %></h6>
+            
+            <% current_user.appointments_for_gardens.where.not(status:"refused").each do |appointment_for_gardens| %>
+              <% if appointment_for_gardens.delivered == nil %>
+                <div class="card-reservation">
+                  <% if appointment_for_gardens.garden.photos.attached? %>
+                    <%= cl_image_tag appointment_for_gardens.garden.photos.first.key, class:"card-img" %>
+                  <% end %>
+                  <div class="card-reservation-infos">
+                    <% unless appointment_for_gardens.status == "accepted" %>
+                      <%= appointment_for_gardens.user.first_name %>
+                      <%= appointment_for_gardens.date.strftime('%A, %d %b %Hh') %>
+                      <%= link_to "✅ Accept reservation", accept_appointment_path(appointment_for_gardens)%>
+                      <%= link_to "❌ Refuse reservation", refuse_appointment_path(appointment_for_gardens)%>
+                    <% else %>
+                      <h2> 📅 Reservation scheduled on <%= appointment_for_gardens.date.strftime('%A, %d %b %Hh') %> </h2>
+                      <%= link_to "✅ Confirm delivery", deliver_appointment_path(appointment_for_gardens)%>
+                      <%= link_to "❌Delivery canceled", canceldeliver_appointment_path(appointment_for_gardens)%>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </p>
       </div>
     <% end %>
 
     <div class="dashboard-appointments">
       <% if current_user.gardens.any? %>
-        <h2>My reservations</h2>
+        <h2>Reservations agenda</h2>
         <p>
           <div class="gardenCalendar" data-events="<%= @events.to_json %>"></div>
         </p>

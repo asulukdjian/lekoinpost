@@ -1,0 +1,60 @@
+.card-reservation {
+  overflow: hidden;
+  height: 80px;
+  border: 0.5px solid $primary;
+  box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card-reservation .card-img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-reservation h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dashboard-gardens h6 {
+  position: relative;
+  font-size: 16px;
+  color: #10B89A;
+  margin: 0;
+  text-align: left;
+  z-index: 1;
+  margin-bottom: 8px;
+  a {
+    color: $primary;
+  }
+    &:after {
+    content: "";
+    height: 20px;
+    width: 40px;
+    background: $info;
+    position: absolute;
+    left: -12px;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.7;
+  }
+}
+
+.card-reservation p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-reservation .card-reservation-infos {
+  padding: 16px;
+}

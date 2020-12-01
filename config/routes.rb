@@ -4,7 +4,14 @@ Rails.application.routes.draw do
   resources :gardens do
     resources :appointments, only: [ :new, :create ]
   end
-  resources :appointments, only: [ :edit, :update, :destroy ]
+  resources :appointments, only: [ :edit, :update, :destroy ] do
+    member do
+      get :accept
+      get :refuse
+      get :deliver
+      get :canceldeliver
+    end
+  end
 
   get '/dashboard', to: 'pages#dashboard'
   resources :chatrooms, only: :show do
