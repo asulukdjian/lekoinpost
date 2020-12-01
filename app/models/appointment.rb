@@ -9,6 +9,7 @@ class Appointment < ApplicationRecord
 
   def score
     return unless self.delivered?
+
     if description.downcase == "organic waste"
       points = 1
     elsif description.downcase == "compost"
@@ -16,9 +17,9 @@ class Appointment < ApplicationRecord
     end
     return self.quantity * points
   end
-  
+
   private
-  
+
   def create_chatroom
     Chatroom.create(appointment: self)
   end
