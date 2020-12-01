@@ -37,13 +37,26 @@
   color: white;
 }
 
-// .container-modal{
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: space-evenly;
-//   }
+#modal-input {
+justify-content: space-between;
+}
 
-// .form-item-modal{
-//   margin-right: 10px;
-// }
+#modal-input-abyme {
+  .width-input {
+    width: 14rem;
+  }
+  i {
+    width: 11rem;
+    text-align: center;
+  }
+}
+.input-class {
+width: 33%;
+} 
+#abyme--products {
+  display: flex;
+  align-items: flex-end;
+  // justify-content: space-evenly;
+  width: 100%;
+}
+
