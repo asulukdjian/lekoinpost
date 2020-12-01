@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_12_01_154000) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_154000) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.string "messages"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "appointment_id", null: false

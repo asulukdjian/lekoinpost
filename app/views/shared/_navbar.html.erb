@@ -28,7 +28,7 @@
         </button> %>
         <!-- Modal -->
         <div class="modal fade" id="newGardenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+          <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Create your garden</h5>
@@ -37,15 +37,17 @@
                 </button>
               </div>
               <div class="modal-body">
-                <div class="container">
+                <div class="container-modal">
                   <%= simple_form_for (Garden.new) do |f| %>
-                    <%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden" %>
-                    <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables"%>
+                    <div class= "d-flex"> 
+                      <div class="form-item-modal"><%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden" %></div>
+                      <div class="form-item-modal><%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables"%></div>
+                    </div>
                     <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
-                    <%= f.input :reward_score, label: "Reward score", hint: "Select number of points for user to gain an award" %>
+                    <%= f.input :reward_score, label: "Reward score", hint: "Select number of points for user to gain an award", collection: 15..40, selected: 1 %>
                     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos", hint: "You an add as many photos as you want. Select them all together" %>
                     <h2 id="h2-abyme">Add some products</h2>
-                      <%= abymize(:products, f) do |abyme| %>
+                      <%= abymize(:products, f, min_count: 1) do |abyme| %>
                         <%= abyme.records %>
                         <%= abyme.new_records %>
                         <%= add_association(content: "Add a product", html: { class: 'btn btn-info mb-3 prod-btn-text'}) %>

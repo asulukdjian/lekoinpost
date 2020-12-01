@@ -14,17 +14,18 @@
 
 .card-carousel {
   margin-bottom: 20px;
-  margin-top: 32px;
+  margin-top: 15px;
+  margin-left: 80px;
   border-radius: 10px;
     &:after {
     content: "";
     position: absolute;
     height: 50%;
-    width: 75%;
+    width: 45%;
     background: $info;
     // border: thin solid black;
-    right: 191px;
-    bottom: 190px;
+    left: 200px;
+    top: 180px;
     z-index: -1;
     opacity: 0.4;
   }
@@ -71,11 +72,15 @@
     height: 50%;
     width: 75%;
     background: $primary;
-    right: -54px;
-    bottom: -39px;
+    right: -400px;
+    bottom: -10px;
     z-index: -1;
     opacity: 0.4;
   }
+}
+
+.card-garden-map {
+margin-left: -90px;
 }
 
 .back-garden-button {
@@ -87,16 +92,23 @@
 }
 
 .give-button {
-  padding: 30px;
+  padding-left: 50px;
+  padding-top: 20px;
 }
 
 .card-products {
-  padding: 30px;
+  padding-top: 20px;
+  // padding-left: 50px;
+  margin-left: 50px;
+  height: 500px;
+  width: 200px;
+  text-align: center;
   border-radius: 10px;
   background: $yellow;
   display: flex;
   flex-direction: column;
   height: fit-content;
+  color: white;
 }
 
 

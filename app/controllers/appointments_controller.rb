@@ -10,6 +10,8 @@ class AppointmentsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
     @appointment.garden = @garden
     @appointment.user = current_user
+    Chatroom.create(appointment: @appointment)
+
     authorize @appointment
     if @appointment.save
       redirect_to dashboard_path

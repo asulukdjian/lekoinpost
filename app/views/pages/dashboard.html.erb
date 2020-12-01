@@ -15,6 +15,7 @@
                 <h2><%= link_to garden.name, garden_path(garden) %></h2>
                 <p>📪  <%=  garden.address %></p>
                 <p> <%= garden.description %></p>
+                <p> <div class="garden-action"><%= link_to "Modify", edit_garden_path(garden) %></div> </p>
               </div>
             </div>
           <% end %>
@@ -74,19 +75,21 @@
                   <span>🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
                 <% end %>
                 <% if policy(appointment).destroy? %>
-                  <span>❌<%= link_to "delete", 
+                  <span>❌<%= link_to "delete",
                     appointment_path(appointment),
                     method: :delete,
                     data: { confirm: "Are you sure?"
                     } %></span>
                 <% end %>
+                <%= link_to "Chat", chatroom_path(appointment.chatroom) %>
               </div>
             </div>
           <% end %>
         </p>
       <% end %>
     </div>
-    
+
   </div>
   <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>
 </div>
+
