@@ -10,8 +10,6 @@ class AppointmentsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
     @appointment.garden = @garden
     @appointment.user = current_user
-    Chatroom.create(appointment: @appointment)
-
     authorize @appointment
     if @appointment.save
       redirect_to dashboard_path
@@ -44,6 +42,38 @@ class AppointmentsController < ApplicationController
     @garden = @appointment.garden
     @appointment.user = current_user
     @appointment.destroy
+    redirect_to dashboard_path
+  end
+
+  def accept
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.status = "accepted"
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
+  def refuse
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.status = "refused"
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
+  def deliver
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.delivered = true
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
+  def canceldeliver
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
+    @appointment.delivered = false
+    @appointment.save
     redirect_to dashboard_path
   end
 

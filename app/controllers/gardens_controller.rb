@@ -45,7 +45,7 @@ class GardensController < ApplicationController
     @garden = Garden.new(garden_params)
     @garden.user = current_user
     authorize @garden
-    if @garden.save!
+    if @garden.save
       redirect_to garden_path(@garden)
     else
       flash[:notice] = "Warning, we encountered a problem creating your garden, please review the form."
