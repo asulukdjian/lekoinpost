@@ -52,7 +52,7 @@
                     data: { confirm: "Are you sure?"
                     } %></span>
                 <% end %>
-                 <%#= link_to 'Chat', chatroom_path(appointment.chatroom), class: 'text-dark'%> 
+                <%= link_to "Chat", chatroom_path(appointment.chatroom) %>
               </div>
             </div>
           <% end %>
@@ -63,6 +63,4 @@
   </div>
   <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>
 </div>
-<%# @chatrooms.each do |chatroom|%>
-  <%#= link_to "Chat with X", chatroom_path(chatroom) %>
-<%# end %>
+
