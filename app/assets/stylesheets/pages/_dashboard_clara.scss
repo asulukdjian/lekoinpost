@@ -1,3 +1,29 @@
+.row {
+  margin-top: 20px;
+}
+
+.clara-past-appointments {
+}
+
+.clara-points {
+}
+
+.clara-rewards {
+}
+
+.chat {
+  margin-left: 50px;
+  margin-bottom: 25px;
+  margin-top: -30px;
+}
+
+.modify {
+margin-right: 10px;
+}
+
+.delete {
+
+}
 .dashboard-content {
   display: flex;
   justify-content: space-evenly;
@@ -5,8 +31,8 @@
 
 .card-appointment {
   overflow: hidden;
-  height: 200px;
-  width: 75%;
+  height: 120px;
+  width: 80%;
   border: 0.5px solid $primary;
   box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
   background: white;
@@ -26,7 +52,8 @@
 .card-appointment h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 0px;
+  margin-bottom: -25px;
 
 }
 
@@ -34,8 +61,8 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .card-appointment .card-appointment-infos {
