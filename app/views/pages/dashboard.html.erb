@@ -25,7 +25,7 @@
           <h2>Reservations checklist</h2>
           <% current_user.gardens.each do |garden| %>
             <h6><%= garden.name %></h6>
-            
+
             <% current_user.appointments_for_gardens.where.not(status:"refused").each do |appointment_for_gardens| %>
               <% if appointment_for_gardens.delivered == nil %>
                 <div class="card-reservation">
@@ -69,9 +69,9 @@
               <#% end %>
               <div class="card-appointment-infos">
                 <h2><#%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
-                <p>📅  <#%= appointment.date.strftime("%b %d, %Y") %></p>
-                <p>🕗  <#%= appointment.date.strftime("%H:%M") %></p>
-                <p>🧺  <#%= appointment.quantity %> kg</p>
+                <p>📅  <#%= appointment.date.strftime("%b %d, %Y") %>
+                🕗  <#%= appointment.date.strftime("%H:%M") %></p>
+                <p>🧺  <#%= appointment.quantity %> kg of <%= appointment.description %></p>
                 <#% if policy(appointment).edit? %>
                   <span>🖍 <#%= link_to "Modify", edit_appointment_path(appointment) %></span>
                 <#% end %>
