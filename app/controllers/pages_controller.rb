@@ -5,9 +5,6 @@ class PagesController < ApplicationController
     @my_appointments = current_user.appointments
     @my_gardens = current_user.gardens
     @my_reserved_gardens = current_user.reserved_gardens
-    @chatrooms = @my_appointments.map(&:chatroom)
-
-
     @events = current_user.reservations.map do |appointment|
     {
       title: appointment.user.first_name,
