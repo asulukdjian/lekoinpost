@@ -41,6 +41,7 @@
                       <%= link_to "❌Delivery canceled", canceldeliver_appointment_path(appointment_for_gardens)%>
                     <% end %>
                   </div>
+                <%= link_to "Chat", chatroom_path(appointment_for_gardens.chatroom) %>
                 </div>
               <% end %>
             <% end %>
@@ -61,3 +62,4 @@
   </div>
   <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>
 </div>
+
