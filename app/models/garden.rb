@@ -29,7 +29,13 @@ class Garden < ApplicationRecord
     return user_scores.compact.sum
   end
 
+
   # def has_at_least_one_product
   #   products.count >= 1 ? errors.clear : errors.add(:products, "At least one product")
+  # end 
+
+  # def missing_points
+  #   missing_points = reward_score - user_scores
+  #   return missing_points
   # end
 end
