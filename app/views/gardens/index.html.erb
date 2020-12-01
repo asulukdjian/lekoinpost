@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-8">
-      <div class="d-flex justify-content-between flex-wrap">
+      <div class="d-flex justify-content-between flex-wrap tache">
       <% @gardens.each do |garden| %>
         <div class="card-product">
           <%= cl_image_tag garden.photos.first.key, alt: "garden-photo" %>
