@@ -1,8 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
   <div class="logo">
-    <%= image_tag "Logo.png" %>
-    <h4>Où Compost</h4>
+    <%= image_tag "logo-ou-compost.png" %>
   </div>
   <% end %>
 
@@ -44,7 +43,6 @@
                     <%= f.input :reward_score, label: "Reward score", prompt: "Points to be granted an award", collection: 15..40, wrapper_html: {class: "input-class"}  %>
                   </div>
                   <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
-                 
                   <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos", hint: "You can add as many photos as you want. Select them all together" %>
                   <h2 id="h2-abyme"><strong>Add products to your garden</strong></h2>
                     <div class="d-flex" id="modal-input-abyme">
