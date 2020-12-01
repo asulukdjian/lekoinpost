@@ -60,33 +60,6 @@
         </p>
       <% else %>
       <%= render partial: "pages/dashboard_partial/dashboard_clara", locals:{appointments: @my_appointments}%>
-<!--         <h2>My appointments</h2>
-        <p>
-          <#% @my_appointments.each do |appointment|  %>
-            <div class="card-appointment">
-              <#% if appointment.garden.photos.attached? %>
-                <#%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
-              <#% end %>
-              <div class="card-appointment-infos">
-                <h2><#%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
-                <p>📅  <#%= appointment.date.strftime("%b %d, %Y") %>
-                🕗  <#%= appointment.date.strftime("%H:%M") %></p>
-                <p>🧺  <#%= appointment.quantity %> kg of <%= appointment.description %></p>
-                <#% if policy(appointment).edit? %>
-                  <span>🖍 <#%= link_to "Modify", edit_appointment_path(appointment) %></span>
-                <#% end %>
-                <#% if policy(appointment).destroy? %>
-                  <span>❌<#%= link_to "delete",
-                    appointment_path(appointment),
-                    method: :delete,
-                    data: { confirm: "Are you sure?"
-                    } %></span>
-                <#% end %>
-                <#%= link_to "Chat", chatroom_path(appointment.chatroom) %>
-              </div>
-            </div>
-          <#% end %>
-        </p> -->
       <% end %>
     </div>
 
