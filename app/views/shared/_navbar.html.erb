@@ -1,8 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
   <div class="logo">
-    <%= image_tag "Logo.png" %>
-    <h4>Où Compost</h4>
+    <%= image_tag "logo-ou-compost.png" %>
   </div>
   <% end %>
 
@@ -39,7 +38,7 @@
               <div class="modal-body">
                 <div class="container-modal">
                   <%= simple_form_for (Garden.new) do |f| %>
-                    <div class= "d-flex"> 
+                    <div class= "d-flex">
                       <div class="form-item-modal"><%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden" %></div>
                       <div class="form-item-modal><%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables"%></div>
                     </div>
