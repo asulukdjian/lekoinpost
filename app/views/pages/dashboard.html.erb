@@ -81,7 +81,9 @@
                     data: { confirm: "Are you sure?"
                     } %></span>
                 <% end %>
-                <%= link_to "Chat", chatroom_path(appointment.chatroom) %>
+                <% if appointment.chatroom %>
+                  <%= link_to "Chat", chatroom_path(appointment.chatroom) %>
+                <% end %>
               </div>
             </div>
           <% end %>
