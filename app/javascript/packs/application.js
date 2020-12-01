@@ -43,12 +43,15 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#appointment_date")) initFlatpickr();
 
   const calendarEl = document.querySelector('.gardenCalendar');
-  const events = JSON.parse(calendarEl.dataset.events)
-  const calendar = new Calendar(calendarEl, {
-    plugins: [dayGridPlugin],
-    events: events,
-    firstDay: 1
-  });
-  calendar.render();
+  if (calendarEl) {
+    const events = JSON.parse(calendarEl.dataset.events)
+    const calendar = new Calendar(calendarEl, {
+      plugins: [dayGridPlugin],
+      events: events,
+      firstDay: 1
+      });
+      calendar.render();
+
+  }
   initChatroomCable();
 });
