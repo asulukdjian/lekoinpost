@@ -45,7 +45,7 @@
                   <span>🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
                 <% end %>
                 <% if policy(appointment).destroy? %>
-                  <span>❌<%= link_to "delete", 
+                  <span>❌<%= link_to "delete",
                     appointment_path(appointment),
                     method: :delete,
                     data: { confirm: "Are you sure?"
@@ -57,7 +57,7 @@
         </p>
       <% end %>
     </div>
-    
+
   </div>
   <div class="back-garden-button"><%= link_to "⬅ back to gardens", gardens_path, id: "btn-back" %></div>
 </div>

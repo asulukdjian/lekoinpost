@@ -25,4 +25,9 @@ class Garden < ApplicationRecord
 
     return user_scores.compact.sum
   end
+
+  # def missing_points
+  #   missing_points = reward_score - user_scores
+  #   return missing_points
+  # end
 end
