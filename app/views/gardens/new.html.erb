@@ -3,6 +3,7 @@
     <%= f.input :name, label: "Enter the garden name" %>
     <%= f.input :description, label: "Enter the garden description"%>
     <%= f.input :address, label: "Enter the garden address" %>
+    <%= f.input :reward_score, label: "Reward score", hint: "Select number of points for user to gain an award", collection: 15..40, selected: 1 %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
     <h2>Add some products</h2>
