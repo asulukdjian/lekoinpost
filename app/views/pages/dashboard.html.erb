@@ -81,8 +81,12 @@
                     method: :delete,
                     data: { confirm: "Are you sure?"
                     } %></span>
-                <#% end %>
-                <#%= link_to "Chat", chatroom_path(appointment.chatroom) %>
+
+                <% end %>
+                <% if appointment.chatroom %>
+                  <%= link_to "Chat", chatroom_path(appointment.chatroom) %>
+                <% end %>
+
               </div>
             </div>
           <#% end %>
