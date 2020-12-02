@@ -11,22 +11,22 @@
             <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
-            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
-            <p>You will aquire <%=appointment.display_app_score %> points</p>
+            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>
+            You will aquire <%=appointment.display_app_score %> points</p>
             <% if appointment.status == "accepted" %>
-              <p>✅ Appointment accepted </p>
+              <p>✅ Appointment accepted
             <% elsif appointment.status == "refused" %>
-              <p>❌ Appointment refused </p>
+              ❌ Appointment refused
             <% elsif appointment.status == "pending" %>
-              <p>🔄 Waiting confirmation </p>
+              🔄 Waiting confirmation
             <% end %>
 
              <% if appointment.delivered == true %>
-              <p>✅ Delivery received </p>
+              ✅ Delivery received
             <% elsif appointment.delivered == false %>
-              <p>❌ Not delivered </p>
+              ❌ Not delivered
             <% elsif appointment.delivered == nil %>
-              <p>🔄 Delivery pending </p>
+              🔄 Delivery pending </p>
             <% end %>
 
             <% if policy(appointment).edit? %>
@@ -49,7 +49,7 @@
     </p>
   </div>
   <div class="clara-points col-4">
-    <h2>Points</h2> 
+    <h2>Points</h2>
   <div class="clara-card-points">
     <% @my_booked_gardens.each do |garden| %>
       <p><%= garden.name %></p>
