@@ -30,7 +30,7 @@
        <!--        <div class="card-garden-buttons">
         <div class="give-button"><#%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %></div>
       </div> -->
-            <%= link_to " 💬Chat", chatroom_path(appointment.chatroom) %>
+            <span><%= link_to "💬 Chat", chatroom_path(appointment.chatroom) %></span>
           </div>
         </div>
       <% end %>
