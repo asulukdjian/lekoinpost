@@ -19,17 +19,6 @@ puts "gardens destroyed"
 User.destroy_all
 puts "users destroyed"
 
-clara = User.new(
-  first_name: "Clara",
-  last_name: Faker::Name.last_name,
-  email: "clara@mail.fr",
-  password: "123456",
-  password_confirmation: "123456",
-  address: "44 rue Ordener, 75018 Paris"
-)
-file = URI.open('https://images.unsplash.com/photo-1520423465871-0866049020b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
-clara.avatar.attach(io: file, filename: "Clara avatar.png", content_type: 'image/jpg')
-clara.save!
 
 gaston = User.new(
   first_name: "Gaston",
@@ -37,13 +26,24 @@ gaston = User.new(
   email: "gaston@mail.fr",
   password: "123456",
   password_confirmation: "123456",
-  address: "97, rue Lénine, 93170 Bagnolet",
+  address: "44 rue Ordener, 75018 Paris",
 
 )
 file = URI.open('https://images.unsplash.com/photo-1529928874840-505e8bf2b2a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
 gaston.avatar.attach(io: file, filename: "Gaston avatar.png", content_type: 'image/jpg')
 gaston.save!
 
+clara = User.new(
+  first_name: "Clara",
+  last_name: Faker::Name.last_name,
+  email: "clara@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "97, rue Lénine, 93170 Bagnolet"
+)
+file = URI.open('https://images.unsplash.com/photo-1520423465871-0866049020b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
+clara.avatar.attach(io: file, filename: "Clara avatar.png", content_type: 'image/jpg')
+clara.save!
 
 garden1 = Garden.new(
     name: "La cité fertile",
