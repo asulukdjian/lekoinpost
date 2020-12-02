@@ -19,14 +19,16 @@ class Garden < ApplicationRecord
   def score_for(user)
     # appointments.where(user: user).map(&:score).compact.sum
 
-    user_appointments = appointments.where(user: user)
+    # user_appointments = appointments.where(user: user)
+    total_score = appointments.where(user: user, delivered: true).pluck(:score).sum
     # user_appointments.map(&:score)
 
-    user_scores = user_appointments.map do |app|
-      app.validated_score
-    end
+    # user_scores = user_appointments.map do |app|
+    #   app.validated_score
+    # end
 
-    return user_scores.compact.sum
+    # return user_scores.compact.sum
+    return total_score
   end
 
 

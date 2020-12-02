@@ -75,6 +75,7 @@ class GardensController < ApplicationController
   def claim_reward
     @garden = Garden.find(params[:id])
     authorize @garden
+    @total_score = @garden.score_for(current_user)
     @appointments = Appointment.where(garden: @garden, user: current_user, delivered: true)
     deducted_score = @garden.reward_score
     @appointments.each do |app|
@@ -89,6 +90,7 @@ class GardensController < ApplicationController
         app.update(score: - deducted_score)
       end 
     end
+
     redirect_to dashboard_path
   end
 
