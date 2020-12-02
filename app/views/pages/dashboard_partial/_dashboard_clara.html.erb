@@ -48,15 +48,15 @@
     </p>
   </div>
   <div class="clara-points col-6">
-    <h2>Points</h2>
 
-    <div class="clara-card-points">
-      <% @my_booked_gardens.each do |garden| %>
-        <p><%= garden.name %></p>
-        <%= garden.score_for(current_user) %> / <%= garden.reward_score %>
-        <% if garden.score_for(current_user) >= garden.reward_score %>
-          <%= "button : get your reward"  %>
-        <% end %>
+    <h2>Points</h2> 
+  <div class="clara-card-points">
+    <% @my_booked_gardens.each do |garden| %>
+      <p><%= garden.name %></p>
+      <%= garden.score_for(current_user) %> / <%= garden.reward_score %>
+      <% if garden.score_for(current_user) >= garden.reward_score %>
+        <%= link_to "Claim your reward", claim_reward_garden_path(garden)  %>
+
       <% end %>
     </div>
 
@@ -110,5 +110,6 @@
   </div>
   <div class="clara-rewards col-6">
     <h2>Rewards</h2>
+    <p>You can claim your seasonal basket</p>
   </div>
 </div>
