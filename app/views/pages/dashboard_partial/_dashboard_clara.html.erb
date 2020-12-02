@@ -12,11 +12,16 @@
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
             <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
+            <% if appointment.status == "accepted" %>
+              <p>✅ Appointment accepted </p>
+            <% elsif appointment.status == "refused" %>
+              <p>❌ Appointment refused </p>
+            <% end %>
             <% if policy(appointment).edit? %>
               <span class="modify">🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
             <% end %>
             <% if policy(appointment).destroy? %>
-              <span class="delete">❌<%= link_to "delete",
+              <span class="delete">🗑 <%= link_to "delete",
                 appointment_path(appointment),
                 method: :delete,
                 data: { confirm: "Are you sure?"
