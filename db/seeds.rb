@@ -15,9 +15,9 @@ User.destroy_all
 puts "users destroyed"
 
 clara = User.new(
-  first_name: "Clara", 
+  first_name: "Clara",
   last_name: Faker::Name.last_name,
-  email: "clara@mail.fr", 
+  email: "clara@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "44 rue Ordener, 75018 Paris"
@@ -27,12 +27,13 @@ clara.avatar.attach(io: file, filename: "Clara avatar.png", content_type: 'image
 clara.save!
 
 gaston = User.new(
-  first_name: "Gaston", 
-  last_name: Faker::Name.last_name, 
-  email: "gaston@mail.fr", 
+  first_name: "Gaston",
+  last_name: Faker::Name.last_name,
+  email: "gaston@mail.fr",
   password: "123456",
   password_confirmation: "123456",
-  address: "97, rue Lénine, 93170 Bagnolet"
+  address: "97, rue Lénine, 93170 Bagnolet",
+
 )
 file = URI.open('https://images.unsplash.com/photo-1529928874840-505e8bf2b2a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80')
 gaston.avatar.attach(io: file, filename: "Gaston avatar.png", content_type: 'image/jpg')
@@ -43,7 +44,8 @@ garden1 = Garden.new(
     name: "La cité fertile",
     description: "Friche urbaine remplie de verdure proposant des marchés de producteurs locaux, des sessions musicales, des grandes tablées dans la convivialité",
     address: "14 avenue Edouard Vaillant, 93500 Pantin",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 23
   )
 file = URI.open('https://www.pariszigzag.fr/wp-content/uploads/2018/08/cite-fertle-recyclerie-paris-zigzag-scaled.jpg')
 garden1.photos.attach(io: file, filename: "La cite fertile view1.png", content_type: 'image/jpg')
@@ -56,9 +58,9 @@ garden1.photos.attach(io: file, filename: "La cite fertile view4.png", content_t
 garden1.save!
 
 emilie = User.new(
-  first_name: "Emilie", 
-  last_name: Faker::Name.last_name, 
-  email: "emilie@mail.fr", 
+  first_name: "Emilie",
+  last_name: Faker::Name.last_name,
+  email: "emilie@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "71 Rue Henri Langlois, 93000 Bobigny"
@@ -71,7 +73,8 @@ garden2 = Garden.new(
     name: "Le jardin d'Emilie",
     description: "Jardin alternatif bio et collaboratif de quartier",
     address: "4 Rue Henri Barbusse, 93300 Aubervilliers",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 17
   )
 file = URI.open('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e')
 garden2.photos.attach(io: file, filename: "Le jardin d'Emilie view1.png", content_type: 'image/jpg')
@@ -82,9 +85,9 @@ garden2.photos.attach(io: file, filename: "Le jardin d'Emilie view3.png", conten
 garden2.save!
 
 paul = User.new(
-  first_name: "Paul", 
-  last_name: Faker::Name.last_name, 
-  email: "paul@mail.fr", 
+  first_name: "Paul",
+  last_name: Faker::Name.last_name,
+  email: "paul@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "71 Rue Henri Langlois, 93000 Bobigny"
@@ -95,9 +98,10 @@ paul.save!
 
 garden3 = Garden.new(
     name: "Parc de la Butte du Chapeau Rouge",
-    description: "Parc paysager en pente ouvert depuis 1938, fontaine majestueuse, pelouses, aire de jeux, tables de ping-pong.", 
-    address: " 5 Avenue Debidour, 75019 Paris", 
-    user_id: User.last.id
+    description: "Parc paysager en pente ouvert depuis 1938, fontaine majestueuse, pelouses, aire de jeux, tables de ping-pong.",
+    address: " 5 Avenue Debidour, 75019 Paris",
+    user_id: User.last.id,
+    reward_score: 33
   )
 file = URI.open('https://s2.qwant.com/thumbr/0x380/5/c/0a1620525d7d719ddd9556b700787d9d6edd0499a35254f357d4c1a5d78b94/Parc-Butte-du-Chapeau-Rouge.jpg?u=https%3A%2F%2Fwww.unjourdeplusaparis.com%2Fwp-content%2Fuploads%2F2016%2F07%2FParc-Butte-du-Chapeau-Rouge.jpg&q=0&b=1&p=0&a=1')
 garden3.photos.attach(io: file, filename: "Parc de la Butte du Chapeau Rouge view1.png", content_type: 'image/jpg')
@@ -108,9 +112,9 @@ garden3.photos.attach(io: file, filename: "Parc de la Butte du Chapeau Rouge vie
 garden3.save!
 
 jose = User.new(
-  first_name: "Jose", 
-  last_name: Faker::Name.last_name, 
-  email: "jose@mail.fr", 
+  first_name: "Jose",
+  last_name: Faker::Name.last_name,
+  email: "jose@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "18 Rue Claude Guinot, 93400 Saint-Ouen"
@@ -121,9 +125,10 @@ jose.save!
 
 garden4 = Garden.new(
     name: "La friche de Saint-Ouen",
-    description: "Friche urbaine de quartier en construction", 
+    description: "Friche urbaine de quartier en construction",
     address: " 4 Rue Claude Guinot, 93400 Saint-Ouen",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 32
   )
 file = URI.open('https://s1.qwant.com/thumbr/0x380/0/5/a7513da1474388bcd6ef1d82e89f98c7ddf9686c8becf27134fab8d98ca1ed/image_5.png?u=https%3A%2F%2Fwww.anousparis.fr%2Fapp%2Fuploads%2F2017%2F09%2Fimage_5.png&q=0&b=1&p=0&a=1')
 garden4.photos.attach(io: file, filename: "La friche de Saint-Ouen view1.png", content_type: 'image/jpg')
@@ -134,9 +139,9 @@ garden4.photos.attach(io: file, filename: "La friche de Saint-Ouen view3.png", c
 garden4.save!
 
 romain = User.new(
-  first_name: "Romain", 
-  last_name: Faker::Name.last_name, 
-  email: "romain@mail.fr", 
+  first_name: "Romain",
+  last_name: Faker::Name.last_name,
+  email: "romain@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "12 bis Rue du Ruisseau, 75018 Paris"
@@ -149,7 +154,8 @@ garden5 = Garden.new(
     name: "Les jardins du Ruisseau",
     description: "La Ferme se compose de plusieurs espaces complémentaires et interdépendants : une prairie, un potager, un poulailler et 4 systèmes de compostage",
     address: "110 bis Rue du Ruisseau, 75018 Paris",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 16
   )
 file = URI.open('https://s2.qwant.com/thumbr/0x380/6/0/73db9a2b2d5fe718a28b9ba751fc5b923c9e42c7c30591eb71c6a5c3ed51ff/paname-goodman_jardins-du-ruisseau_01.jpg?u=http%3A%2F%2Fwww.panamegoodman.fr%2Fwp-content%2Fuploads%2Fpaname-goodman_jardins-du-ruisseau_01.jpg&q=0&b=1&p=0&a=1')
 garden5.photos.attach(io: file, filename: "Les jardins du Ruisseau view1.png", content_type: 'image/jpg')
@@ -160,9 +166,9 @@ garden5.photos.attach(io: file, filename: "Les jardins du Ruisseau view3.png", c
 garden5.save!
 
 helena = User.new(
-  first_name: "Helena", 
-  last_name: Faker::Name.last_name, 
-  email: "helena@mail.fr", 
+  first_name: "Helena",
+  last_name: Faker::Name.last_name,
+  email: "helena@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "2 Rue Ella Fitzgerald, 75019 Paris"
@@ -175,7 +181,8 @@ garden6 = Garden.new(
     name: "Jardin21",
     description: "Le Jardin21 est un terrain de 1500m² niché au bord du canal avec un jardin à cultiver, un potager avec des arbres fruitiers, aromatiques et des légumes de saison.",
     address: "12/A Rue Ella Fitzgerald, 75019 Paris",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 19
   )
 file = URI.open('https://s1.qwant.com/thumbr/0x380/8/7/0f3590108d37ddba87d831e81839e5b18551a14e64de867185c4ec74789ab3/1.jpg?u=https%3A%2F%2Fwww.les48h.fr%2Fapp%2Fuploads%2Fevents%2F22168%2F1.jpg&q=0&b=1&p=0&a=1')
 garden6.photos.attach(io: file, filename: "Jardin21 view1.png", content_type: 'image/jpg')
@@ -186,9 +193,9 @@ garden6.photos.attach(io: file, filename: "Jardin21 view3.png", content_type: 'i
 garden6.save!
 
 gayane = User.new(
-  first_name: "Gayane", 
-  last_name: Faker::Name.last_name, 
-  email: "gayane@mail.fr", 
+  first_name: "Gayane",
+  last_name: Faker::Name.last_name,
+  email: "gayane@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "12 Rue Saint-Just, 93100 Montreuil"
@@ -201,7 +208,8 @@ garden7 = Garden.new(
     name: "Les murs à pêches",
     description: "L'association des murs à pêches entretient 3 parcelles, un verger historique avec des pêchers palissées 'à la loque' contre les murs ainsi qu'un jardin médiéval, et acceuille également de nombreux évenements",
     address: "8 Impasse Gobetue, 93100 Montreuil",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 35
   )
 file = URI.open('https://s2.qwant.com/thumbr/0x380/f/1/386b6d0beafc7fb586b8199737916ee7ea2e9729e25b418d38f3bd5c3a760b/115-dcomdrone-murs_a_peches-montreuil-10.jpg?u=https%3A%2F%2Fwww.hosiho.net%2Ffr%2Fimages%2F115-dcomdrone-murs_a_peches-montreuil-10.jpg%3Fresize%3D700-524&q=0&b=1&p=0&a=1')
 garden7.photos.attach(io: file, filename: "Les murs à pêches view1.png", content_type: 'image/jpg')
@@ -212,9 +220,9 @@ garden7.photos.attach(io: file, filename: "Les murs à pêches view3.png", conte
 garden7.save!
 
 vanessa = User.new(
-  first_name: "Vanessa", 
-  last_name: Faker::Name.last_name, 
-  email: "vanessa@mail.fr", 
+  first_name: "Vanessa",
+  last_name: Faker::Name.last_name,
+  email: "vanessa@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "12 Rue des Couronnes, 75020 Paris"
@@ -227,7 +235,8 @@ garden8 = Garden.new(
     name: "Parc de Belleville",
     description: "Parc créé en 1988, avec aire de jeux, théâtre en plein air, vignoble et musée sur l'air de la ville.",
     address: "47 Rue des Couronnes, 75020 Paris",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 38
   )
 file = URI.open('https://s2.qwant.com/thumbr/0x380/f/f/89eeeab9b9cb3a4789ec6ea7bdd01acd93edba354ab52c9e7448c0342f22a6/belleville_paris-2.jpg?u=https%3A%2F%2Fdwgfmnrdprofc.cloudfront.net%2Fwp-content%2Fuploads%2F2013%2F09%2Fbelleville_paris-2.jpg&q=0&b=1&p=0&a=1')
 garden8.photos.attach(io: file, filename: "Parc de Belleville view1.png", content_type: 'image/jpg')
@@ -239,9 +248,9 @@ garden8.save!
 
 
 estelle = User.new(
-  first_name: "Estelle", 
-  last_name: Faker::Name.last_name, 
-  email: "estelle@mail.fr", 
+  first_name: "Estelle",
+  last_name: Faker::Name.last_name,
+  email: "estelle@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "15 Rue de l'Épine Prolongée, 93100 Montreuil"
@@ -254,7 +263,8 @@ garden9 = Garden.new(
     name: "Parc départemental Jean-Moulin",
     description: "Parc populaire avec terrain de football, jardin éducatif, étang, sentiers pavés, plantations et autres.",
     address: "Rue de l'Épine Prolongée, 93100 Montreuil",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 17
   )
 file = URI.open('https://s1.qwant.com/thumbr/700x0/b/9/3d38412f01992ebb9ee13c5a31fa4641da8ad61e2094852e69d736afe35f94/arton15534.jpg?u=https%3A%2F%2Fseinesaintdenis.fr%2FIMG%2Farton15534.jpg%3F1592389163&q=0&b=1&p=0&a=1')
 garden9.photos.attach(io: file, filename: "Parc départemental Jean-Moulin view1.png", content_type: 'image/jpg')
@@ -265,9 +275,9 @@ garden9.photos.attach(io: file, filename: "Parc départemental Jean-Moulin view3
 garden9.save!
 
 killian = User.new(
-  first_name: "Killian", 
-  last_name: Faker::Name.last_name, 
-  email: "killian@mail.fr", 
+  first_name: "Killian",
+  last_name: Faker::Name.last_name,
+  email: "killian@mail.fr",
   password: "123456",
   password_confirmation: "123456",
   address: "23 Rue de la Grange aux Belles, 75010 Paris"
@@ -280,7 +290,8 @@ garden10 = Garden.new(
     name: "Jardin Villemin",
     description: "Parc avec aire de jeux pour enfants, jardin potager communautaire, terrains de sport, kiosque à musique et pelouses",
     address: "14 Rue des Récollets, 75010 Paris",
-    user_id: User.last.id
+    user_id: User.last.id,
+    reward_score: 28
   )
 file = URI.open('https://s2.qwant.com/thumbr/0x380/c/4/cb0456a104dc6eb53ac1acc6f197f47bea0afe408b67e320fba1192eb0fffe/coach-sportif-jardin-villemin-ban-min.jpg?u=https%3A%2F%2Fwww.justcoaching.fr%2Fwp-content%2Fuploads%2F2019%2F10%2Fcoach-sportif-jardin-villemin-ban-min.jpg&q=0&b=1&p=0&a=1')
 garden10.photos.attach(io: file, filename: "Jardin Villemin view1.png", content_type: 'image/jpg')
@@ -296,19 +307,19 @@ puts "10 gardens created"
 
 
 # Garden.create!(
-#   description: "Gaston's cité fertile", 
-#   address: "14 avenue Edouard Vaillant, Pantin", 
-#   user_id: 
+#   description: "Gaston's cité fertile",
+#   address: "14 avenue Edouard Vaillant, Pantin",
+#   user_id:
 # )
 # Garden.create!(
-#   description: "Emilie's shared garden", 
-#   address: "4 Rue Henri Barbusse, Aubervilliers", 
+#   description: "Emilie's shared garden",
+#   address: "4 Rue Henri Barbusse, Aubervilliers",
 #   user_id: 3
 # )
 
 # Garden.create!(
-#   description: "Paul in Guinot garden", 
-#   address: " 4 Rue Claude Guinot, Saint-Ouen", 
+#   description: "Paul in Guinot garden",
+#   address: " 4 Rue Claude Guinot, Saint-Ouen",
 #   user_id: 3
 # )
 
