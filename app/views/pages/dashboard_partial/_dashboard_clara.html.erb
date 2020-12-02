@@ -32,7 +32,15 @@
     </p>
   </div>
   <div class="clara-points col-6">
-    <h2>Points</h2>
+    <h2>Points</h2> 
+    <% @my_booked_gardens.each do |garden| %>
+      <p><%= garden.name %></p>
+      <%= garden.score_for(current_user) %> / <%= garden.reward_score %>
+      <% if garden.score_for(current_user) >= garden.reward_score %>
+        <%= "button : get your reward"  %>
+      <% end %>
+    <% end %>
+    
   </div>
 </div>
 <div class="row">
