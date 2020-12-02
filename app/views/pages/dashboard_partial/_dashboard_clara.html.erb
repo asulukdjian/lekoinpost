@@ -37,7 +37,7 @@
     </p>
   </div>
   <div class="clara-points col-6">
-    <h2>Points</h2> 
+    <h2>Points</h2>
     <% @my_booked_gardens.each do |garden| %>
       <p><%= garden.name %></p>
       <%= garden.score_for(current_user) %> / <%= garden.reward_score %>
@@ -45,12 +45,44 @@
         <%= "button : get your reward"  %>
       <% end %>
     <% end %>
-    
+
   </div>
 </div>
 <div class="row">
   <div class="clara-past-appointments col-6">
     <h2>Past Appointments</h2>
+    <% @my_past_appointments.each do |appointment| %>
+      <div class="card-appointment">
+          <% if appointment.garden.photos.attached? %>
+            <%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
+          <% end %>
+          <div class="card-appointment-infos">
+            <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
+            <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
+            🕗  <%= appointment.date.strftime("%H:%M") %></p>
+            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
+            <% if appointment.status == "accepted" %>
+              <p>✅ Appointment accepted </p>
+            <% elsif appointment.status == "refused" %>
+              <p>❌ Appointment refused </p>
+            <% end %>
+            <% if policy(appointment).edit? %>
+              <span class="modify">🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
+            <% end %>
+            <% if policy(appointment).destroy? %>
+              <span class="delete">🗑 <%= link_to "delete",
+                appointment_path(appointment),
+                method: :delete,
+                data: { confirm: "Are you sure?"
+                } %></span>
+            <% end %>
+       <!--        <div class="card-garden-buttons">
+        <div class="give-button"><#%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %></div>
+      </div> -->
+            <span><%= link_to "💬 Chat", chatroom_path(appointment.chatroom) %></span>
+          </div>
+        </div>
+    <% end %>
   </div>
   <div class="clara-rewards col-6">
     <h2>Rewards</h2>
