@@ -32,7 +32,7 @@
     left: 0;
     top: 0;
     z-index: -1;
-    filter: blur(6px);
+    filter: blur(3px);
     border-radius: 10px;
   }
   h1 {
@@ -64,11 +64,21 @@ box-shadow: 4px 4px 4px #10B89A;
 border-radius: 10px;
 }
 
-
+.tagline {
+  width: 450px;
+  text-align: center;
+  margin-left: 210px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
 .banner p {
   font-size: 17px;
   font-weight: lighter;
-  color: black;
+  color: #10B89A;
+  text-shadow: 0,2px 0,8px rgba(40, 40, 40, 0.5);
+  // color: rgb(20, 20, 20);
   opacity: 1;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  font-family: 'Space Mono', monospace;
 }
