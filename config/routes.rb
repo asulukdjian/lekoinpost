@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :gardens do
     resources :appointments, only: [ :new, :create ]
+    member do
+      get :claim_reward
+    end
   end
   resources :appointments, only: [ :edit, :update, :destroy ] do
     member do
