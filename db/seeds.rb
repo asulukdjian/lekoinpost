@@ -303,8 +303,109 @@ garden10.save!
 
 puts "10 users created"
 puts "10 gardens created"
+puts "creating products"
 
+Product.create!(
+  category: "Flowers",
+  name: "Orchids",
+  garden: garden1
+)
 
+Product.create!(
+  category: "Vegetables",
+  name: "Carrots",
+  garden: garden1
+)
+
+Product.create!(
+  category: "Vegetables",
+  name: "Beet",
+  garden: garden1
+)
+
+Product.create!(
+  category: "Fruits",
+  name: "Pink Lady Apples",
+  garden: garden2
+)
+
+Product.create!(
+  category: "Vegetables",
+  name: "Potatoes",
+  garden: garden2
+)
+
+Product.create!(
+  category: "Fruits",
+  name: "Clementine",
+  garden: garden3
+)
+
+Product.create!(
+  category: "Flowers",
+  name: "Rose",
+  garden: garden4
+)
+
+Product.create!(
+  category: "Flowers",
+  name: "Tulip",
+  garden: garden5
+)
+
+Product.create!(
+  category: "Vegetable",
+  name: "Fennel",
+  garden: garden5
+)
+
+Product.create!(
+  category: "Vegetables",
+  name: "Spinach",
+  garden: garden6
+)
+
+Product.create!(
+  category: "Vegetables",
+  name: "Onions",
+  garden: garden7
+)
+
+Product.create!(
+  category: "Vegetables",
+  name: "Leek",
+  garden: garden7
+)
+
+Product.create!(
+  category: "Vegetables",
+  name: "Celery",
+  garden: garden8
+)
+
+Product.create!(
+  category: "Vegetables",
+  name: "Parsley",
+  garden: garden9
+)
+
+Product.create!(
+  category: "Fruits",
+  name: "Lemon",
+  garden: garden9
+)
+
+Product.create!(
+  category: "Fruits",
+  name: "Grapefruit",
+  garden: garden10
+)
+
+Product.create!(
+  category: "Vegetable",
+  name: "Endive",
+  garden: garden10
+)
 
 # Garden.create!(
 #   description: "Gaston's cité fertile",
