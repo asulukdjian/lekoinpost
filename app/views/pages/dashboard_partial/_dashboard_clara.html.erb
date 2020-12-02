@@ -12,6 +12,7 @@
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
             <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
+            <p>You will aquire <%=appointment.display_app_score %> points</p>
             <% if appointment.status == "accepted" %>
               <p>✅ Appointment accepted </p>
             <% elsif appointment.status == "refused" %>
@@ -74,6 +75,7 @@
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
             <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
+            <p>You have aquired <%=appointment.score %> points</p>
             <% if appointment.status == "accepted" %>
               <p>✅ Appointment accepted </p>
             <% elsif appointment.status == "refused" %>
