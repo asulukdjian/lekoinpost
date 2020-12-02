@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @my_appointments = current_user.appointments
+    @my_current_appointments = current_user.appointments.where(delivered: nil)
+    @my_past_appointments = current_user.appointments.where(delivered: true)
     @my_booked_gardens = @my_appointments.map { |app| app.garden }.uniq
     @my_gardens = current_user.gardens
     @my_reserved_gardens = current_user.reserved_gardens
