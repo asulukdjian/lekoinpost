@@ -1,18 +1,28 @@
-
 <div class="container">
-  <h2>Chatroom: <%= @garden.name%><%= @chatroom.name %></h2>
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
-        <i class="author">
-          <span><%= message.user.full_name %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
-      </div>
+  <h2 class="my-5">Chatroom: <%= @garden.name%><%= @chatroom.name %></h2>
+  <div class="card-chat mt-5">
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <div class="message-container" id="message-<%= message.id %>">
+          <i class="author">
+            <span class="d-flex justify-content-start align-items-center mb-3">
+              <span class="mr-2"><%= cl_image_tag message.user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.8", class: "avatar dropdown-toggle" %></span>
+              <span class="d-flex justify-content-center align-items-start flex-column">
+                <span class="d-flex justify-content-start align-items-center">
+                  <span class="pr-2"><strong><%= message.user.full_name %></strong></span>
+                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                </span>
+                <p class="mb-0 text-dark"><%= message.content %></p>
+              </span>
+            </span>
+          </i>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="chat-input mt-5">
+    <%= simple_form_for [ @chatroom, @message ] do |f| %>
+      <%= f.input :content, label: false, placeholder: "Type your message here #{@chatroom.name}" %>
     <% end %>
   </div>
-  <%= simple_form_for [ @chatroom, @message ] do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-  <% end %>
 </div>
