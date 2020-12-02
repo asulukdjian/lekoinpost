@@ -56,7 +56,7 @@
       <%= garden.score_for(current_user) %> / <%= garden.reward_score %>
       <% if garden.score_for(current_user) >= garden.reward_score %>
         <%= link_to "Claim your reward", claim_reward_garden_path(garden)  %>
-
+        <% end %>
       <% end %>
     </div>
 
