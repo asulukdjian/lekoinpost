@@ -59,6 +59,16 @@ margin-right: 10px;
   margin-bottom: 10px;
 }
 
+.past {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: grey;
+  opacity: 0.8;
+  // z-index: 10;
+  display: none;
+}
+
 .card-appointment .card-img {
   height: 100%;
   width: 120px;
