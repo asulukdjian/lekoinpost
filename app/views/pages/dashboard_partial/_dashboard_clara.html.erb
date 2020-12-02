@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="clara-upcoming-appointments col-6">
+  <div class="clara-upcoming-appointments col-8">
     <h2>My appointments</h2>
     <p>
       <% @my_current_appointments.each do |appointment|  %>
@@ -47,9 +47,8 @@
       <% end %>
     </p>
   </div>
-  <div class="clara-points col-6">
+  <div class="clara-points col-4">
     <h2>Points</h2>
-
     <div class="clara-card-points">
       <% @my_booked_gardens.each do |garden| %>
         <p><%= garden.name %></p>
@@ -59,12 +58,10 @@
         <% end %>
       <% end %>
     </div>
-
-
   </div>
 </div>
 <div class="row">
-  <div class="clara-past-appointments col-6">
+  <div class="clara-past-appointments col-8">
     <h2>Past Appointments</h2>
     <% @my_past_appointments.each do |appointment| %>
       <div class="card-appointment">
@@ -108,7 +105,7 @@
         </div>
     <% end %>
   </div>
-  <div class="clara-rewards col-6">
+  <div class="clara-rewards col-4">
     <h2>Rewards</h2>
   </div>
 </div>

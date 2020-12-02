@@ -8,6 +8,19 @@
 .clara-points {
 }
 
+.clara-card-points {
+  overflow: hidden;
+  height: 120px;
+  width: 80%;
+  border: 0.5px solid $primary;
+  box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 .clara-rewards {
 }
 
