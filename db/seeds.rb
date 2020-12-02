@@ -8,6 +8,11 @@
 require "faker"
 require "open-uri"
 
+Chatroom.destroy_all
+puts "chatrooms destroyed"
+Appointment.destroy_all
+puts "appointments destroyed"
+
 Garden.destroy_all
 puts "gardens destroyed"
 
