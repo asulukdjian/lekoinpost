@@ -23,7 +23,7 @@ class Garden < ApplicationRecord
     # user_appointments.map(&:score)
 
     user_scores = user_appointments.map do |app|
-      app.score
+      app.validated_score
     end
 
     return user_scores.compact.sum

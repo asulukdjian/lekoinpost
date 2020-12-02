@@ -42,7 +42,7 @@
       <p><%= garden.name %></p>
       <%= garden.score_for(current_user) %> / <%= garden.reward_score %>
       <% if garden.score_for(current_user) >= garden.reward_score %>
-        <%= "button : get your reward"  %>
+        <%= link_to "Claim your reward", claim_reward_garden_path(garden)  %>
       <% end %>
     <% end %>
     
@@ -54,5 +54,6 @@
   </div>
   <div class="clara-rewards col-6">
     <h2>Rewards</h2>
+    <p>You can claim your seasonal basket</p>
   </div>
 </div>
