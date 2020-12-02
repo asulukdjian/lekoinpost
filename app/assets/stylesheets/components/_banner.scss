@@ -1,5 +1,5 @@
 .banner {
-  color: white;
+  color: #10B89A;
   text-align: center;
   height: 500px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -12,10 +12,11 @@
   margin-bottom: 32px;
 }
 
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 1px rgba(40, 40, 40, 0.5);
 }
 
 .title-box {
@@ -24,13 +25,14 @@
   &:after {
     position: absolute;
     content: "";
-    background: $info;
+    // background: white;
+    background: #fdedc8;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
     z-index: -1;
-    filter: blur(3px);
+    filter: blur(6px);
     border-radius: 10px;
   }
   h1 {
@@ -66,7 +68,7 @@ border-radius: 10px;
 .banner p {
   font-size: 17px;
   font-weight: lighter;
-  color: grey;
+  color: black;
   opacity: 1;
   margin-bottom: 30px;
 }
