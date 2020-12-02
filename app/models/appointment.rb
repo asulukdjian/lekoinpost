@@ -20,6 +20,15 @@ class Appointment < ApplicationRecord
     save
   end
 
+  def display_app_score
+    if description.downcase == "organic waste"
+      points = 1
+    elsif description.downcase == "compost"
+      points = 3
+    end
+    self.score = self.quantity * points
+  end
+
   def validated_score
     # return 0 unless !self.delivered?
     if !self.delivered?
