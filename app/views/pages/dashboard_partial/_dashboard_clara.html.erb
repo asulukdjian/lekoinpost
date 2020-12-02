@@ -66,7 +66,7 @@
   <div class="clara-past-appointments col-8">
     <h2>Past Appointments</h2>
     <% @my_past_appointments.each do |appointment| %>
-      <div class="card-appointment">
+      <div class="card-appointment past">
           <% if appointment.garden.photos.attached? %>
             <%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
           <% end %>
