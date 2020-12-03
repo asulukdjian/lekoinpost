@@ -112,6 +112,12 @@
   </div>
   <div class="clara-rewards col-6">
     <h2>Rewards</h2>
-    <p>You can claim your seasonal basket</p>
+    <p>You can claim your seasonal basket
+    <% @my_booked_gardens.each do |garden| %>
+      <p><%= garden.name %></p>
+       <% if garden.score_for(current_user) >= garden.reward_score %>
+        <%= "reward" %>
+        <% end %>
+      <% end %></p>
   </div>
 </div>
