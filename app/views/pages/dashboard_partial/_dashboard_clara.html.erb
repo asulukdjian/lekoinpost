@@ -102,13 +102,13 @@
     <div class="clara-card-rewards">
       <% unless @my_booked_gardens.any? { |garden| garden.score_for(current_user) >= garden.reward_score } %>
         <div class="basket">
-          <%= image_tag("panier-reward-placeholder", {:style => "width:200px; opacity:0.3;"}) %>
+          <%= image_tag("panier-reward-placeholder.png", {:style => "width:200px; opacity:0.3;"}) %>
         </div>
       <% end %>
       <% @my_booked_gardens.each do |garden| %>
         <% if garden.score_for(current_user) >= garden.reward_score %>
           <h2> 🍊 <%= garden.name %></h2>
-          <div class="basket"><%= image_tag("panier-reward", {:style => "width:200px;"}) %></div>
+          <div class="basket"><%= image_tag("panier-reward.png", {:style => "width:200px;"}) %></div>
         <% end %>
       <% end %></p>
     </div>
