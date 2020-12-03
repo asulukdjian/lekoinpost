@@ -3,15 +3,15 @@
 <div class="card-chat">
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% if @chatroom.messages.empty? %>
-      <h2> You have no messages yet...</h2>
+      <h2> You have no messages yet.</h2>
     <% else %>
       <% @chatroom.messages.each do |message| %>
         <div class="message-container <%= 'right' if message.user == current_user %>" id="message-<%= message.id %>">
           <i class="author">
             <span class="d-flex justify-content-start align-items-center mb-3 <%= 'right' if message.user == current_user %>">
               <span class="mr-2 <%= 'ml-2' if message.user == current_user %>" ><%= cl_image_tag message.user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.8", class: "avatar dropdown-toggle" %></span>
-              <span class="d-flex justify-content-center align-items-start flex-column">
-                <span class="d-flex justify-content-start align-items-center">
+              <span class="d-flex justify-content-center flex-column">
+                <span class="d-flex <%= 'justify-content-end' if message.user == current_user %> align-items-center">
                   <span class="pr-2"><strong><%= message.user.full_name %></strong></span>
                   <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
                 </span>
