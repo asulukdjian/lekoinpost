@@ -59,7 +59,7 @@
 .card-appointment-infos h2 {
   position: relative;
   font-size: 16px;
-  margin: 0;
+  margin-bottom: 0px;
   text-align: right;
   z-index: 1;
   a {
@@ -75,5 +75,26 @@
     bottom: 0;
     z-index: -1;
     opacity: 0.7;
+  }
+}
+
+/* .fc .fc-button.fc-button-primary {
+  background-color: red !important;
+} */
+
+.fc .fc-button-primary:disabled {
+  background-color:  rgba(246, 194, 60, 0.4) !important;
+  color: #10B89A !important;
+  font-weight: bold !important;
+  &:hover {
+    background-color:  rgba(246, 194, 60, 0.6) !important;
+  }
+}
+
+.fc .fc-button-primary {
+  background-color:  #10B89A !important;
+  border-color: white !important;
+  &:hover {
+    background-color:  rgba(16, 184, 154, 0.8) !important;
   }
 }

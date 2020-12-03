@@ -11,8 +11,10 @@
             <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
-            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>
-            You will aquire <%=appointment.display_app_score %> points</p>
+
+            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
+            <p>You will aquire <%=appointment.score %> points</p>
+          
             <% if appointment.status == "accepted" %>
               <p>✅ Appointment accepted
             <% elsif appointment.status == "refused" %>
@@ -64,6 +66,10 @@
 <div class="row">
   <div class="clara-past-appointments col-8">
     <h2>Past Appointments</h2>
+    <% @my_past_appointments_gardens.each do |garden| %>
+      <%= link_to garden.name, dashboard_path(garden_id: garden.id), class: "btn btn-primary mb-1" %>
+    <% end %>
+    <%= link_to 'Tous', dashboard_path, class: "btn btn-primary mb-1" %>
     <% @my_past_appointments.each do |appointment| %>
       <div class="card-appointment past">
           <% if appointment.garden.photos.attached? %>
@@ -74,7 +80,7 @@
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
             <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>
-            You have aquired <%=appointment.score %> points</p>
+            You have aquired <%=appointment.display_score_card %> points</p>
             <% if appointment.status == "accepted" %>
               <p>✅ Appointment accepted
             <% elsif appointment.status == "refused" %>
@@ -96,6 +102,11 @@
   </div>
   <div class="clara-rewards col-4">
     <h2>Rewards</h2>
-    <p>You can claim your seasonal basket</p>
+      <% @my_booked_gardens.each do |garden| %>
+      <p><%= garden.name %></p>
+       <% if garden.score_for(current_user) >= garden.reward_score %>
+        <%= image_tag("Reward_image", {:style => "width:400px;"}) %>
+        <% end %>
+      <% end %></p>
   </div>
 </div>

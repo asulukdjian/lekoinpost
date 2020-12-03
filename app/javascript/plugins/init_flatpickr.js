@@ -1,8 +1,9 @@
 import flatpickr from "flatpickr";
+
 const initFlatpickr = () => {
   flatpickr("#appointment_date", {
     enableTime: true,
-    dateFormat: "Y-m-d H:i",
+    dateFormat: "F j, Y - H:i",
     time_24hr: true,
     "disable": [
       function (date) {
