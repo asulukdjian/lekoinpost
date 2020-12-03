@@ -513,7 +513,7 @@ puts "creating 6 appointments for Gaston"
 
 Appointment.create(date: DateTime.parse("11 Nov 2020 17:00:00"),quantity: 6, description: "Organic waste", user: gaston, garden: garden1, status: "accepted", delivered: true, score: 6)
 Appointment.create(date: DateTime.parse("17 Nov 2020 15:00:00"),quantity: 5, description: "Organic waste", user: gaston, garden: garden1, status: "accepted", delivered: true, score: 5)
-Appointment.create(date: DateTime.parse("27 Nov 2020 11:00:00"),quantity: 2, description: "Compost", user: gaston, garden: garden1, status: "accepted", score: 6)
+Appointment.create(date: DateTime.parse("27 Nov 2020 11:00:00"),quantity: 5, description: "Compost", user: gaston, garden: garden1, status: "accepted", score: 15)
 Appointment.create(date: DateTime.parse("13 Oct 2020 17:00:00"),quantity: 7, description: "Organic waste", user: gaston, garden: garden6, status: "accepted", delivered: true, score: 7)
 Appointment.create(date: DateTime.parse("30 Oct 2020 17:00:00"),quantity: 4, description: "Organic waste", user: gaston, garden: garden6, status: "refused", score: 4)
 Appointment.create(date: DateTime.parse("06 Nov 2020 17:00:00"),quantity: 3, description: "Organic waste", user: gaston, garden: garden7, status: "accepted", delivered: true, score: 3)
