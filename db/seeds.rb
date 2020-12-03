@@ -499,7 +499,7 @@ puts "creating 12 appointments for Clara's calendar"
 Appointment.create(date: DateTime.parse("09 Dec 2020 14:00:00"),quantity: 2, description: "Compost",user: thibaut, garden: garden1, status: "accepted")
 Appointment.create(date: DateTime.parse("09 Dec 2020 15:30:00"),quantity: 5, description: "Organic waste",user: louise, garden: garden1, status: "accepted")
 Appointment.create(date: DateTime.parse("09 Dec 2020 17:00:00"),quantity: 7, description: "Organic waste",user: camille, garden: garden1, status: "accepted")
-Appointment.create(date: DateTime.parse("12 Dec 2020 11:00:00"),quantity: 5, description: "Compost",user: sasha, garden: garden1, status: "accepted")
+# Appointment.create(date: DateTime.parse("12 Dec 2020 11:00:00"),quantity: 5, description: "Compost",user: sasha, garden: garden1, status: "accepted")
 Appointment.create(date: DateTime.parse("12 Dec 2020 09:30:00"),quantity: 8, description: "Organic waste",user: simon, garden: garden1, status: "accepted")
 Appointment.create(date: DateTime.parse("12 Dec 2020 15:00:00"),quantity: 4, description: "Compost",user: hugo, garden: garden1, status: "accepted")
 Appointment.create(date: DateTime.parse("12 Dec 2020 18:00:00"),quantity: 2, description: "Compost",user: noemie, garden: garden1, status: "accepted")

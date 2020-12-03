@@ -9,13 +9,13 @@
               <% if garden.photos.attached? %>
                 <%= cl_image_tag garden.photos.first.key, class:"card-img" %>
               <% end %>
-              <div class="card-appointment-infos h-100 w-100 p-2" >
+              <div class="card-appointment-infos">
                 <h2><%= link_to garden.name, garden_path(garden) %></h2>
                 <p>📪  <%=  garden.address %></p>
                 <p>🏅 <%= garden.reward_score %> points</p>
-                <div class="d-flex justify-content-center align-items-center">
-                  <%= link_to "🖍 Modify", edit_garden_path(garden), class: "btn btn-primary" %>
-                  <%= link_to "🗑 Delete", garden_path(garden), method: :delete, data: { confirm: "Do you really want to delete \"#{garden.name}\" ?"}, class: "text-danger ml-2" %>
+                <div class="garden-action">
+                  🖍 <%= link_to "Modify", edit_garden_path(garden) %>
+                  🗑 <%= link_to "Delete", garden_path(garden), method: :delete, data: { confirm: "Do you really want to delete \"#{garden.name}\" ?"} %>
                 </div>
               </div>
             </div>
