@@ -83,9 +83,9 @@ class GardensController < ApplicationController
       next if deducted_score.negative?
     
       deducted_score -= app.score
-      next if deducted_score == 0
+      # next if deducted_score == 0
 
-      if deducted_score > 0
+      if deducted_score >= 0
         app.update(score: 0)
       else
         app.update(score: - deducted_score)
