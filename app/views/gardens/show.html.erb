@@ -6,22 +6,25 @@
     <div class="col-4">
       <div class="card-garden">
         <%= cl_image_tag @garden.user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.5", class: "avatar-card rounded-circle" %>
-        <div class="card-garden-owner"><p><strong>Garden owner : </strong><%= @garden.user.full_name %> </p></div>
-        <div class="card-garden-name"><p><strong> Name: </strong><%= @garden.name %></p></div>
-        <div class="card-garden-address"><p><strong> Address: </strong><%= @garden.address %></p></div>
-        <div class="card-garden-description"><p><strong> Description: </strong><%= @garden.description %></p></div>
-        <div> <p><strong> Points for reward: </strong><%= @garden.reward_score %></p></div>
+        <div class="card-garden-owner"><p><span class="title-color"><strong>Garden owner : </strong></span><%= @garden.user.full_name %> </p></div>
+        <div class="card-garden-name"><p><span class="title-color"><strong> Name: </strong></span><%= @garden.name %></p></div>
+        <div class="card-garden-address"><p><span class="title-color"><strong> Address: </strong></span><%= @garden.address %></p></div>
+        <div class="card-garden-description"><p><span class="title-color"><strong> Description: </strong></span><%= @garden.description %></p></div>
+        <div> <p><span class="title-color"><strong> Points for reward: </strong></span><%= @garden.reward_score %></p></div>
       </div>
     </div>
     <div class="col-4">
-      <div class="card-products">
-        <p><strong>Products: </strong></p>
-        <% @garden.products.each do |product| %>
-        <p><%= product.name %></p>
-      <% end %>
-      </div>
+      <div class="row align-items-center">
         <div class="card-garden-buttons">
-        <div class="give-button"><%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %></div>
+        <div class="give-button"><%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %>
+        </div>
+        </div>
+        <div class="card-products">
+          <p><strong>Products: </strong></p>
+          <% @garden.products.each do |product| %>
+          <p><%= product.name %></p>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-4">
@@ -31,6 +34,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
+                <h2>Book an appointment</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -38,13 +42,12 @@
               <%= simple_form_for([@garden, Appointment.new] ) do |f| %>
                 <div class="modal-body">
                   <div class="container">
-                    <h2>Book an appointment</h2>
                     <%= f.input  :date, as: :string, required: false, input_html: {id: "appointment_date"} %>
-                    <%= f.label :quantity %>
-                    <%= f.select :quantity, Array(1..10) %> kg<br>
-                    <%= f.label :description %>
-                    <%= f.select :description, ["Organic waste", "Compost"] %>
+                    <%= f.label :"I would like to give" %>
+                    <%= f.select :quantity, Array(1..10) %> kg of
+                    <%= f.select :description, ["Organic waste", "Compost"] %> to <%= @garden.user.first_name %>.
                   </div>
+                  <p>🌱 As a reminder, 1kg of <strong>Organic Waste</strong> rewards you with 1 point and 1kg of <strong>Compost</strong> rewards you with 3 points.</p>
                 </div>
                 <div class="modal-footer">
                   <%= f.submit "Book your appointment", class: "btn btn-primary"%>

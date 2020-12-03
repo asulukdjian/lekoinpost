@@ -68,8 +68,9 @@ class GardensController < ApplicationController
 
   def destroy
     @garden = Garden.find(params[:id])
+    authorize @garden
     @garden.destroy
-    redirect_to gardens_path
+    redirect_to dashboard_path
   end
 
   def claim_reward

@@ -12,8 +12,11 @@
               <div class="card-appointment-infos">
                 <h2><%= link_to garden.name, garden_path(garden) %></h2>
                 <p>📪  <%=  garden.address %></p>
-                <p> <%= garden.description %></p>
-                <p> <div class="garden-action"><%= link_to "Modify", edit_garden_path(garden) %></div> </p>
+                <p>🏅 <%= garden.reward_score %> points</p>
+                <div class="garden-action">
+                  🖍 <%= link_to "Modify", edit_garden_path(garden) %>
+                  🗑 <%= link_to "Delete", garden_path(garden), method: :delete, data: { confirm: "Do you really want to delete \"#{garden.name}\" ?"} %>
+                </div>
               </div>
             </div>
           <% end %>
@@ -23,7 +26,7 @@
           <h2>Reservations checklist</h2>
           <% current_user.gardens.each do |garden| %>
             <h6><%= garden.name %></h6>
-            <% current_user.appointments_for_gardens.where.not(status:"refused").each do |appointment_for_gardens| %>
+            <% current_user.appointments_for_gardens.where(garden: garden).where.not(status:"refused").each do |appointment_for_gardens| %>
               <% if appointment_for_gardens.delivered == nil %>
                 <div class="card-reservation">
                   <% if appointment_for_gardens.garden.photos.attached? %>
@@ -31,14 +34,14 @@
                   <% end %>
                   <div class="card-reservation-infos">
                     <% unless appointment_for_gardens.status == "accepted" %>
-                      <%= appointment_for_gardens.user.first_name %>
-                      <%= appointment_for_gardens.date.strftime('%A, %d %b %Hh') %>
-                      <%= link_to "✅ Accept reservation", accept_appointment_path(appointment_for_gardens)%>
-                      <%= link_to "❌ Refuse reservation", refuse_appointment_path(appointment_for_gardens)%>
+                      <p>👨 <%= appointment_for_gardens.user.first_name %></p>
+                      <p>📅 <%= appointment_for_gardens.date.strftime('%A, %d %b %Hh') %></p>
+                      <p><%= link_to "✅ Accept reservation", accept_appointment_path(appointment_for_gardens)%>
+                      <%= link_to "❌ Refuse reservation", refuse_appointment_path(appointment_for_gardens)%></p>
                     <% else %>
                       <h2> 📅 Reservation scheduled on <%= appointment_for_gardens.date.strftime('%A, %d %b %Hh') %> </h2>
-                      <%= link_to "✅ Confirm delivery", deliver_appointment_path(appointment_for_gardens)%>
-                      <%= link_to "❌Delivery canceled", canceldeliver_appointment_path(appointment_for_gardens)%>
+                      <p><%= link_to "✅ Confirm delivery", deliver_appointment_path(appointment_for_gardens)%>
+                      <%= link_to "❌Delivery canceled", canceldeliver_appointment_path(appointment_for_gardens)%></p>
                     <% end %>
                   </div>
                 <%= link_to "💬Chat", chatroom_path(appointment_for_gardens.chatroom) %>
