@@ -1,7 +1,7 @@
 .card-reservation {
   overflow: hidden;
-  height: 80px;
-  width: 80%;
+  height: 120px;
+  width: 85%;
   border: 0.5px solid $primary;
   box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
   background: white;
@@ -12,8 +12,8 @@
 }
 
 .card-reservation .card-img {
-  height: 40px;
-  width: 40px;
+  height: 120px;
+  width: 120px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -49,13 +49,13 @@
 }
 
 .card-reservation p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 1;
   margin-bottom: 0;
-  margin-top: 8px;
+  /* margin-top: 8px; */
 }
 
-.card-reservation .card-reservation-infos {
+/* .card-reservation .card-reservation-infos {
   padding: 16px;
-}
+} */
