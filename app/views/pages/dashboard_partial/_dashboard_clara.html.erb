@@ -52,7 +52,7 @@
   <div class="clara-card-points">
     <% @my_booked_gardens.each do |garden| %>
       <div class="h2-garden-points"><h2><%= garden.name %></h2></div>
-       <p>You have <%= garden.score_for(current_user) %> / <%= garden.reward_score %> points.
+       <p> 🏅 You have <%= garden.score_for(current_user) %> / <%= garden.reward_score %>  points.
         <% if garden.score_for(current_user) >= garden.reward_score %>
           <span class="claim-btn"><%= link_to "Claim your reward 🏅 ", claim_reward_garden_path(garden)  %></span> </p>
           <% end %>
@@ -63,10 +63,10 @@
 <div class="row">
   <div class="clara-past-appointments col-7">
     <h2>Past Appointments</h2>
+    <%= link_to 'Tous', dashboard_path, class: "btn btn-primary mb-1 mr-2" %>
     <% @my_past_appointments_gardens.each do |garden| %>
-      <%= link_to garden.name, dashboard_path(garden_id: garden.id), class: "btn btn-primary mb-1" %>
+       ☞ <%=  link_to garden.name, dashboard_path(garden_id: garden.id), class: "jardin-bouton" %>
     <% end %>
-    <%= link_to 'Tous', dashboard_path, class: "btn btn-primary mb-1" %>
     <% @my_past_appointments.each do |appointment| %>
       <div class="card-appointment past">
           <% if appointment.garden.photos.attached? %>
