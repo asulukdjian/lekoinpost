@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="clara-upcoming-appointments col-8">
+  <div class="clara-upcoming-appointments col-7">
     <h2>My appointments</h2>
     <p>
       <% @my_current_appointments.each do |appointment|  %>
@@ -7,22 +7,19 @@
           <% if appointment.garden.photos.attached? %>
             <%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
           <% end %>
-          <div class="card-appointment-infos">
+          <div class="card-clara-appointment-infos">
             <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
-
-            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
-            <p>You will aquire <%=appointment.score %> points</p>
-          
-            <% if appointment.status == "accepted" %>
-              <p>✅ Appointment accepted
+            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>.
+            You will aquire <%=appointment.score %> points.</p>
+            <p><% if appointment.status == "accepted" %>
+              ✅ Appointment accepted
             <% elsif appointment.status == "refused" %>
               ❌ Appointment refused
             <% elsif appointment.status == "pending" %>
               🔄 Waiting confirmation
             <% end %>
-
              <% if appointment.delivered == true %>
               ✅ Delivery received
             <% elsif appointment.delivered == false %>
@@ -35,7 +32,7 @@
               <span class="modify">🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
             <% end %>
             <% if policy(appointment).destroy? %>
-              <span class="delete">🗑 <%= link_to "delete",
+              <span class="delete">🗑 <%= link_to "Delete",
                 appointment_path(appointment),
                 method: :delete,
                 data: { confirm: "Are you sure?"
@@ -44,7 +41,7 @@
        <!--        <div class="card-garden-buttons">
         <div class="give-button"><#%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %></div>
       </div> -->
-            <span><%= link_to "💬 Chat", chatroom_path(appointment.chatroom) %></span>
+            <span class="space-chat"><%= link_to "💬 Chat", chatroom_path(appointment.chatroom) %></span>
           </div>
         </div>
       <% end %>
@@ -54,7 +51,7 @@
     <h2>Points</h2>
   <div class="clara-card-points">
     <% @my_booked_gardens.each do |garden| %>
-      <div class="h2-garden-points"><h2><%= garden.name %><h2></div>
+      <div class="h2-garden-points"><h2><%= garden.name %></h2></div>
        <p>You have <%= garden.score_for(current_user) %> / <%= garden.reward_score %> points.
         <% if garden.score_for(current_user) >= garden.reward_score %>
           <span class="claim-btn"><%= link_to "Claim your reward 🏅 ", claim_reward_garden_path(garden)  %></span> </p>
@@ -64,7 +61,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="clara-past-appointments col-8">
+  <div class="clara-past-appointments col-7">
     <h2>Past Appointments</h2>
     <% @my_past_appointments_gardens.each do |garden| %>
       <%= link_to garden.name, dashboard_path(garden_id: garden.id), class: "btn btn-primary mb-1" %>
@@ -75,7 +72,7 @@
           <% if appointment.garden.photos.attached? %>
             <%= cl_image_tag appointment.garden.photos.first.key, class:"card-img" %>
           <% end %>
-          <div class="card-appointment-infos">
+          <div class="card-clara-appointment-infos">
             <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
@@ -95,18 +92,20 @@
             <% elsif appointment.delivered == nil %>
               🔄 Delivery pending </p>
             <% end %>
-            <p><span><%= link_to "💬 Chat", chatroom_path(appointment.chatroom) %></span></p>
+            <p><span class="space-chat-past"><%= link_to "💬 Chat", chatroom_path(appointment.chatroom) %></span></p>
           </div>
         </div>
     <% end %>
   </div>
   <div class="clara-rewards col-4">
     <h2>Rewards</h2>
+    <div class="clara-card-rewards">
       <% @my_booked_gardens.each do |garden| %>
-      <p><%= garden.name %></p>
-       <% if garden.score_for(current_user) >= garden.reward_score %>
-        <%= image_tag("Reward_image", {:style => "width:400px;"}) %>
+        <% if garden.score_for(current_user) >= garden.reward_score %>
+          <h2> 🍊 <%= garden.name %></h2>
+          <div class="basket"><%= image_tag("panier-reward", {:style => "width:200px;"}) %></div>
         <% end %>
       <% end %></p>
+    </div>
   </div>
 </div>
