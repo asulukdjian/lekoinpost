@@ -9,7 +9,7 @@
               <% if garden.photos.attached? %>
                 <%= cl_image_tag garden.photos.first.key, class:"card-img" %>
               <% end %>
-              <div class="card-appointment-infos h-100 w-100 p-2">
+              <div class="card-appointment-infos h-100 w-100 p-2" >
                 <h2><%= link_to garden.name, garden_path(garden) %></h2>
                 <p>📪  <%=  garden.address %></p>
                 <p>🏅 <%= garden.reward_score %> points</p>
