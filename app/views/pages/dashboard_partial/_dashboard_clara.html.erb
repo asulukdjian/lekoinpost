@@ -98,6 +98,11 @@
   </div>
   <div class="clara-rewards col-4">
     <h2>Rewards</h2>
-    <p>You can claim your seasonal basket</p>
+      <% @my_booked_gardens.each do |garden| %>
+      <p><%= garden.name %></p>
+       <% if garden.score_for(current_user) >= garden.reward_score %>
+        <%= image_tag("Reward_image", {:style => "width:400px;"}) %>
+        <% end %>
+      <% end %></p>
   </div>
 </div>
