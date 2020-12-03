@@ -102,10 +102,10 @@ margin-right: 10px;
   margin-top: 0px;
 }
 
-.card-appointment .card-appointment-infos {
+/* .card-appointment .card-appointment-infos {
   padding: 16px;
   width: 100%;
-}
+} */
 
 .dashboard-appointments {
   width: 100%;
@@ -119,6 +119,10 @@ margin-right: 10px;
   h2 {
     color: #10B89A;
   }
+}
+
+.card-appointment-infos .btn {
+  line-height: 0.5;
 }
 
 .card-appointment-infos h2 {
