@@ -2,94 +2,11 @@
   margin-top: 20px;
 }
 
-.clara-past-appointments {
-}
-
-.clara-points {
-
-}
-
-
-.h2-garden-points {
-  position: relative;
-  font-size: 16px;
-  margin: 0;
-  margin-bottom: 15px;
-  text-align: left;
-  z-index: 1;
-  a {
-    color: $primary;
-  }
-  &:after {
-    content: "";
-    height: 20px;
-    width: 40px;
-    background: $info;
-    position: absolute;
-    right: -1px;
-    bottom: 0;
-    z-index: -1;
-    opacity: 0.7;
-  }
-}
-
-.claim-btn {
-  opacity: 1;
-  color: $primary;
-  // text-shadow: 0px 1px rgba(16, 184, 154, 0.4);
-  background-color: #fdedc8;
-  border: none;
-  box-shadow: 4px 4px 4px #10B89A;
-  border-radius: 5px;
-  padding: 5px;
-  margin-left: 5px;
-}
-
-.clara-card-points {
-  h2 {
-    font-size: 16px;
-    margin: 0px;
-    padding-bottom: 0px;
-  }
-  overflow: hidden;
-  font-size: 14px;
-  // height: 150px;
-  width: 100%;
-  border: 0.5px solid $primary;
-  box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
-  background: white;
-  // display: flex;
-  align-items: center;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 16px;
-}
-
-.clara-rewards {
-}
-
-.chat {
-  margin-left: 50px;
-  margin-bottom: 25px;
-  margin-top: -30px;
-}
-
-.modify {
-margin-right: 10px;
-}
-
-.delete {
-
-}
-.dashboard-content {
-  display: flex;
-  justify-content: space-evenly;
-}
 
 .card-appointment {
   overflow: hidden;
   height: 150px;
-  width: 80%;
+  width: 90%;
   border: 0.5px solid $primary;
   box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
   background: white;
@@ -97,20 +14,6 @@ margin-right: 10px;
   align-items: center;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-
-.past {
-  // width: 140px;
-  // height: 80%;
-  // position: absolute;
-  // background-color: grey;
-  opacity: 0.4;
-  // z-index: 10;
-  // display: none;
-}
-
-.past:hover {
-  opacity: 1;
 }
 
 .card-appointment .card-img {
@@ -120,46 +23,16 @@ margin-right: 10px;
   border-radius: 5px;
 }
 
-// .card-appointment h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0px;
-//   margin-bottom: 0px;
-
-// }
-
-.card-appointment p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0px;
-  margin-top: 0px;
+.card-clara-appointment-infos {
+padding: 16px;
+padding-left: 25px;
 }
 
-/* .card-appointment .card-appointment-infos {
-  padding: 16px;
-  width: 100%;
-} */
-
-.dashboard-appointments {
-  width: 100%;
-  h2 {
-    color: #10B89A;
-  }
-}
-
-.dashboard-gardens {
-  width: 100%;
-  h2 {
-    color: #10B89A;
-  }
-}
-
-.card-appointment-infos .btn {
+.card-clara-appointment-infos .btn {
   line-height: 0.5;
 }
 
-.card-appointment-infos h2 {
+.card-clara-appointment-infos h2 {
   position: relative;
   font-size: 16px;
   margin: 0;
@@ -181,3 +54,195 @@ margin-right: 10px;
     opacity: 0.7;
   }
 }
+
+.card-clara-appointment-infos p {
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: #777;
+  font-style: bold;
+}
+
+
+
+.space-chat {
+  padding-left: 114px;
+  // margin-left: 50px;
+  // margin-bottom: 25px;
+  // margin-top: -30px;
+}
+
+.space-chat-past {
+  padding-left: 304px;
+}
+
+.modify {
+margin-right: 13px;
+margin-left: 39px;
+}
+
+.delete {
+
+}
+
+.clara-points {
+
+}
+
+
+.h2-garden-points {
+  position: relative;
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: left;
+  z-index: 1;
+  a {
+    color: $primary;
+  }
+}
+
+.claim-btn {
+  opacity: 1;
+  color: $primary;
+  // text-shadow: 0px 1px rgba(16, 184, 154, 0.4);
+  background-color: #fdedc8;
+  border: none;
+  box-shadow: 4px 4px 4px #10B89A;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.clara-card-points h2 {
+  font-size: 16px;
+  margin: 0px;
+  padding-bottom: 0px;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+    &:after {
+      content: "";
+      height: 20px;
+      width: 40px;
+      background: $info;
+      position: absolute;
+      right: -1px;
+      bottom: 0;
+      z-index: -1;
+      opacity: 0.7;
+    }
+}
+
+.clara-card-points {
+  overflow: hidden;
+  font-size: 14px;
+  // height: 150px;
+  width: 100%;
+  border: 0.5px solid $primary;
+  box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
+  background: white;
+  // display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 16px;
+
+}
+
+.clara-past-appointments {
+}
+
+.clara-rewards {
+}
+
+.clara-card-rewards {
+  overflow: hidden;
+  font-size: 14px;
+  // height: 150px;
+  width: 100%;
+  border: 0.5px solid $primary;
+  box-shadow: 0px 4px 4px rgba(16, 184, 154, 0.4);
+  background: white;
+  // display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 16px;
+  padding-left: 25px;
+}
+
+.clara-card-rewards h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 15px;
+  margin: 0px;
+  margin-bottom: 10px;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+    &:after {
+      content: "";
+      height: 20px;
+      width: 40px;
+      background: $info;
+      position: absolute;
+      right: -1px;
+      bottom: 0;
+      z-index: -1;
+      opacity: 0.7;
+    }
+}
+.basket {
+  text-align: center;
+  padding: 5px;
+}
+
+.dashboard-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.past {
+  // width: 140px;
+  // height: 80%;
+  // position: absolute;
+  // background-color: grey;
+  opacity: 0.4;
+  // z-index: 10;
+  // display: none;
+}
+
+.past:hover {
+  opacity: 1;
+}
+
+
+
+// .card-appointment h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0px;
+//   margin-bottom: 0px;
+
+// }
+
+
+
+.dashboard-appointments {
+  width: 100%;
+  h2 {
+    color: #10B89A;
+  }
+}
+
+.dashboard-gardens {
+  width: 100%;
+  h2 {
+    color: #10B89A;
+  }
+}
+
+
