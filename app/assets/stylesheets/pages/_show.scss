@@ -48,3 +48,8 @@
   z-index: -10;
   color: $primary;
 }
+
+.flatpickr-day.selected {
+  background: $primary !important;
+  border-color: $primary !important;
+}
