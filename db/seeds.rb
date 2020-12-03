@@ -412,25 +412,113 @@ Product.create!(
   garden: garden10
 )
 
-# Garden.create!(
-#   description: "Gaston's cité fertile",
-#   address: "14 avenue Edouard Vaillant, Pantin",
-#   user_id:
-# )
-# Garden.create!(
-#   description: "Emilie's shared garden",
-#   address: "4 Rue Henri Barbusse, Aubervilliers",
-#   user_id: 3
-# )
+puts "creating 10 garden users"
 
-# Garden.create!(
-#   description: "Paul in Guinot garden",
-#   address: " 4 Rue Claude Guinot, Saint-Ouen",
-#   user_id: 3
-# )
+thibaut = User.new(
+  first_name: "Thibaut",
+  last_name: Faker::Name.last_name,
+  email: "thibaut@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
 
-# puts "3 gardens created"
+jules = User.new(
+  first_name: "Jules",
+  last_name: Faker::Name.last_name,
+  email: "jules@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
 
+hugo = User.new(
+  first_name: "Hugo",
+  last_name: Faker::Name.last_name,
+  email: "hugo@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+sasha = User.new(
+  first_name: "Sasha",
+  last_name: Faker::Name.last_name,
+  email: "sasha@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+simon = User.new(
+  first_name: "Simon",
+  last_name: Faker::Name.last_name,
+  email: "simon@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+louise = User.new(
+  first_name: "Louise",
+  last_name: Faker::Name.last_name,
+  email: "louise@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+anna = User.new(
+  first_name: "Anna",
+  last_name: Faker::Name.last_name,
+  email: "anna@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+capucine = User.new(
+  first_name: "Capucine",
+  last_name: Faker::Name.last_name,
+  email: "capucine@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+camille = User.new(
+  first_name: "Camille",
+  last_name: Faker::Name.last_name,
+  email: "camille@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+noemie = User.new(
+  first_name: "Noémie",
+  last_name: Faker::Name.last_name,
+  email: "noemi@mail.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "71 Rue Henri Langlois, 93000 Bobigny")
+
+puts "creating 12 appointments for Clara's calendar"
+
+Appointment.create(date: DateTime.parse("09 Dec 2020 14:00:00"),quantity: 2, description: "Compost",user: thibaut, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("09 Dec 2020 15:30:00"),quantity: 5, description: "Organic waste",user: louise, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("09 Dec 2020 17:00:00"),quantity: 7, description: "Organic waste",user: camille, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("12 Dec 2020 11:00:00"),quantity: 5, description: "Compost",user: sasha, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("12 Dec 2020 09:30:00"),quantity: 8, description: "Organic waste",user: simon, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("12 Dec 2020 15:00:00"),quantity: 4, description: "Compost",user: hugo, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("12 Dec 2020 18:00:00"),quantity: 2, description: "Compost",user: noemie, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("13 Dec 2020 15:00:00"),quantity: 9, description: "Compost",user: capucine, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("23 Dec 2020 09:00:00"),quantity: 5, description: "Organic waste",user: anna, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("23 Dec 2020 09:30:00"),quantity: 7, description: "Organic waste",user: jules, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("23 Dec 2020 11:00:00"),quantity: 5, description: "Compost",user: thibaut, garden: garden1, status: "accepted")
+Appointment.create(date: DateTime.parse("23 Dec 2020 13:00:00"),quantity: 2, description: "Compost",user: sasha, garden: garden1, status: "accepted")
+
+puts "creating 6 appointments for Gaston"
+
+Appointment.create(date: DateTime.parse("11 Nov 2020 17:00:00"),quantity: 6, description: "Organic waste", user: gaston, garden: garden1, status: "accepted", delivered: true, score: 6)
+Appointment.create(date: DateTime.parse("17 Nov 2020 15:00:00"),quantity: 5, description: "Organic waste", user: gaston, garden: garden1, status: "accepted", delivered: true, score: 5)
+Appointment.create(date: DateTime.parse("27 Nov 2020 11:00:00"),quantity: 2, description: "Compost", user: gaston, garden: garden1, status: "accepted", score: 6)
+Appointment.create(date: DateTime.parse("13 Oct 2020 17:00:00"),quantity: 7, description: "Organic waste", user: gaston, garden: garden6, status: "accepted", delivered: true, score: 7)
+Appointment.create(date: DateTime.parse("30 Oct 2020 17:00:00"),quantity: 4, description: "Organic waste", user: gaston, garden: garden6, status: "refused", score: 4)
+Appointment.create(date: DateTime.parse("06 Nov 2020 17:00:00"),quantity: 3, description: "Organic waste", user: gaston, garden: garden7, status: "accepted", delivered: true, score: 3)
+
+puts "Finished !"
 
 # bundle install + rails db:migrate + tocken cloudinary à ajouter dans le fichier .env (à créer à la racine)
 # verifier que .env est caché dans le fichier .gitignore
