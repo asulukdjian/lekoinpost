@@ -108,6 +108,7 @@
       <% @my_booked_gardens.each do |garden| %>
         <% if garden.score_for(current_user) >= garden.reward_score %>
           <h2> 🍊 <%= garden.name %></h2>
+          <p>Pick up your reward or get it delivered by Disputsch.</p>
           <div class="basket"><%= image_tag("panier-reward.png", {:style => "width:200px;"}) %></div>
         <% end %>
       <% end %></p>
