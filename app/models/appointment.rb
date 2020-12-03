@@ -31,6 +31,16 @@ class Appointment < ApplicationRecord
     end
   end
 
+  def display_score_card
+    points = 0
+    if description.downcase == "organic waste"
+      points = 1
+    elsif description.downcase == "compost"
+      points = 3
+    end
+    return quantity * points
+  end
+
   private
 
   def create_chatroom

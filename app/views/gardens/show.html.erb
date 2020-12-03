@@ -14,16 +14,20 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="row align-items-center">
+      <div class="align-items-center">
         <div class="card-garden-buttons">
         <div class="give-button"><%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %>
         </div>
         </div>
         <div class="card-products">
-          <p><strong>Products: </strong></p>
+          <div class="products-label">
+          <p><strong>Products</strong></p>
+          </div>
+          <div class="products-description">
           <% @garden.products.each do |product| %>
           <p><%= product.name %></p>
           <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -45,9 +49,11 @@
                     <%= f.input  :date, as: :string, required: false, input_html: {id: "appointment_date"} %>
                     <%= f.label :"I would like to give" %>
                     <%= f.select :quantity, Array(1..10) %> kg of
-                    <%= f.select :description, ["Organic waste", "Compost"] %> to <%= @garden.user.first_name %>.
+                    <%= f.select :description, ["Organic waste", "Compost"] %> to <%= @garden.user.first_name %>
                   </div>
-                  <p>🌱 As a reminder, 1kg of <strong>Organic Waste</strong> rewards you with 1 point and 1kg of <strong>Compost</strong> rewards you with 3 points.</p>
+                  <p style="text-align: center"> As a reminder,<br>
+                  1kg of <strong>Organic Waste</strong> rewards you with 1 point 🌱<br>
+                  1kg of <strong>Compost</strong> rewards you with 3 points 🌱🌱🌱</p>
                 </div>
                 <div class="modal-footer">
                   <%= f.submit "Book your appointment", class: "btn btn-primary"%>

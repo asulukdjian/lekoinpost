@@ -33,7 +33,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="main-container">
+    <div class="<%= @show_chatroom_container ? "show-chat-container" : "main-container" %>">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
