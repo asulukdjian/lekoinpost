@@ -11,8 +11,10 @@
             <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
-            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>
-            You will aquire <%=appointment.display_app_score %> points</p>
+
+            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
+            <p>You will aquire <%=appointment.score %> points</p>
+          
             <% if appointment.status == "accepted" %>
               <p>✅ Appointment accepted
             <% elsif appointment.status == "refused" %>

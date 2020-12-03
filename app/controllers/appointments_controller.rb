@@ -11,6 +11,7 @@ class AppointmentsController < ApplicationController
     @appointment.garden = @garden
     @appointment.user = current_user
     authorize @appointment
+    compute_score(@appointment)
     if @appointment.save
       redirect_to dashboard_path
     else
@@ -29,6 +30,7 @@ class AppointmentsController < ApplicationController
     authorize @appointment
 
     if @appointment.update(appointment_params)
+      compute_score(@appointment)
       redirect_to dashboard_path
     else
       render :edit
@@ -80,6 +82,17 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:date, :quantity, :description)
+    params.require(:appointment).permit(:date, :quantity, :description, :score)
+  end
+
+  def compute_score(appointment)
+    points = 0
+    if appointment.description.downcase == "organic waste"
+      points = 1
+    elsif appointment.description.downcase == "compost"
+      points = 3
+    end
+    appointment.score = appointment.quantity * points
+    appointment.save
   end
 end
