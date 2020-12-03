@@ -66,6 +66,10 @@
 <div class="row">
   <div class="clara-past-appointments col-8">
     <h2>Past Appointments</h2>
+    <% @my_past_appointments_gardens.each do |garden| %>
+      <%= link_to garden.name, dashboard_path(garden_id: garden.id), class: "btn btn-primary mb-1" %>
+    <% end %>
+    <%= link_to 'Tous', dashboard_path, class: "btn btn-primary mb-1" %>
     <% @my_past_appointments.each do |appointment| %>
       <div class="card-appointment past">
           <% if appointment.garden.photos.attached? %>
