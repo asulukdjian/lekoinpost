@@ -76,7 +76,7 @@
             <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
             🕗  <%= appointment.date.strftime("%H:%M") %></p>
             <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>
-            You have aquired <%=appointment.score %> points</p>
+            You have aquired <%=appointment.display_score_card %> points</p>
             <% if appointment.status == "accepted" %>
               <p>✅ Appointment accepted
             <% elsif appointment.status == "refused" %>
