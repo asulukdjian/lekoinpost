@@ -48,10 +48,10 @@ document.addEventListener('turbolinks:load', () => {
     const calendar = new Calendar(calendarEl, {
       plugins: [dayGridPlugin],
       events: events,
-      firstDay: 1
+      firstDay: 1,
+      eventOrder: "start"
       });
       calendar.render();
-
   }
   initChatroomCable();
 });
