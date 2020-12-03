@@ -14,7 +14,7 @@
 
             <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %></p>
             <p>You will aquire <%=appointment.score %> points</p>
-          
+
             <% if appointment.status == "accepted" %>
               <p>✅ Appointment accepted
             <% elsif appointment.status == "refused" %>
@@ -35,7 +35,7 @@
               <span class="modify">🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
             <% end %>
             <% if policy(appointment).destroy? %>
-              <span class="delete">🗑 <%= link_to "delete",
+              <span class="delete">🗑 <%= link_to "Delete",
                 appointment_path(appointment),
                 method: :delete,
                 data: { confirm: "Are you sure?"
