@@ -30,7 +30,7 @@
           <h2>Reservations checklist</h2>
           <% current_user.gardens.each do |garden| %>
             <h6><%= garden.name %></h6>
-            <% current_user.appointments_for_gardens.where(garden: garden).where.not(status:"refused").each do |appointment_for_gardens| %>
+            <% current_user.appointments_for_gardens.where(garden: garden).where.not(status:"refused").order(date: :asc).each do |appointment_for_gardens| %>
               <% if appointment_for_gardens.delivered == nil %>
                 <div class="card-reservation">
                   <% if appointment_for_gardens.garden.photos.attached? %>
