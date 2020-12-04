@@ -9,23 +9,29 @@
           <% end %>
           <div class="card-clara-appointment-infos">
             <h2><%= link_to appointment.garden.name, garden_path(appointment.garden) %></h2>
-            <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
-            🕗  <%= appointment.date.strftime("%H:%M") %></p>
-            <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>.
-            You will aquire <%=appointment.score %> points.</p>
-            <p><% if appointment.status == "accepted" %>
-              ✅ Appointment accepted
-            <% elsif appointment.status == "refused" %>
-              ❌ Appointment refused
-            <% elsif appointment.status == "pending" %>
-              🔄 Waiting confirmation
-            <% end %>
-             <% if appointment.delivered == true %>
-              ✅ Delivery received
-            <% elsif appointment.delivered == false %>
-              ❌ Not delivered
-            <% elsif appointment.delivered == nil %>
-              🔄 Delivery pending </p>
+            <div class="pb-3">
+              <div class="">
+                <p>📅  <%= appointment.date.strftime("%b %d, %Y") %>
+                <span class="ml-3">🕗  <%= appointment.date.strftime("%H:%M") %></span></p>
+              </div>
+              <div class="d-flex flex-row justify-content-between align-items-start">
+                <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>.
+                  <span class="ml-1">You will aquire <%=appointment.score %> points</span></p>
+              </div>
+              <p><% if appointment.status == "accepted" %>
+                <span class="mr-3">✅ Appointment accepted</span>
+              <% elsif appointment.status == "refused" %>
+                <span class="mr-3">❌ Appointment refused</span>
+              <% elsif appointment.status == "pending" %>
+                <span class="mr-3">🔄 Waiting confirmation</span>
+              <% end %>
+              <% if appointment.delivered == true %>
+                ✅ Delivery received
+              <% elsif appointment.delivered == false %>
+                ❌ Not delivered
+              <% elsif appointment.delivered == nil %>
+                🔄 Delivery pending </p>
+            </div>
             <% end %>
 
             <% if policy(appointment).edit? %>

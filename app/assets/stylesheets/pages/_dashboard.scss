@@ -95,3 +95,11 @@
     background-color:  rgba(16, 184, 154, 0.8) !important;
   }
 }
+
+.fc-h-event {
+  background-color: #10B89A !important;
+  border: 2px solid  #10B89A !important;
+  &:hover {
+    background-color:  rgba(16, 184, 154, 0.9) !important;
+  }
+}

@@ -39,9 +39,9 @@
                   <div class="card-reservation-infos d-flex flex-column justify-content-around h-100 w-100 pl-2 pr-3">
                     <% unless appointment_for_gardens.status == "accepted" %>
                     <div class="d-flex flex-row justify-content-between align-items-start mt-1 ml-2">
-                      <p>👨 <strong><%= appointment_for_gardens.user.first_name %></strong></p>
-                      <p>📅 <%= appointment_for_gardens.date.strftime('%A, %d %b') %></p>
-                      <p>🕗 <%= appointment_for_gardens.date.strftime('%Hh') %></p>
+                      <p>👨 <strong><%= appointment_for_gardens.user.first_name %></strong>
+                      <span class="ml-3">📅 <%= appointment_for_gardens.date.strftime('%A, %d %b') %></span>
+                      <span class="ml-3">🕗 <%= appointment_for_gardens.date.strftime('%Hh') %></span></p>
                     </div>
                     <div class="d-flex flex-row justify-content-between mb-1 ml-2">
                       <p><%= link_to "✅ Accept reservation", accept_appointment_path(appointment_for_gardens)%></p>
@@ -50,9 +50,9 @@
                     </div>
                     <% else %>
                     <div class="d-flex flex-row justify-content-between align-items-start mt-1 ml-2">
-                      <p>👨 <strong><%= appointment_for_gardens.user.first_name %></strong></p>
-                      <p>📅 <%= appointment_for_gardens.date.strftime('%A, %d %b') %></p>
-                      <p>🕗 <%= appointment_for_gardens.date.strftime('%Hh') %></p>
+                      <p>👨 <strong><%= appointment_for_gardens.user.first_name %></strong>
+                      <span class="ml-3">📅 <%= appointment_for_gardens.date.strftime('%A, %d %b') %></span>
+                      <span class="ml-3">🕗 <%= appointment_for_gardens.date.strftime('%Hh') %></span></p>
                     </div>
                     <div class="mb-1 ml-2">
                       <div class="mb-1">
