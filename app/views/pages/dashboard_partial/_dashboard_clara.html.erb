@@ -58,7 +58,7 @@
   <div class="clara-card-points">
     <% @my_booked_gardens.each do |garden| %>
       <div class="h2-garden-points"><h2><%= garden.name %></h2></div>
-       <p> 🏅 You have <%= garden.score_for(current_user) %> / <%= garden.reward_score %>  points.
+       <p> 🏅 You have <strong><%= garden.score_for(current_user) %> / <%= garden.reward_score %></strong> points
         <% if garden.score_for(current_user) >= garden.reward_score %>
           <span class="claim-btn"><%= link_to "Claim your reward 🏅 ", claim_reward_garden_path(garden)  %></span> </p>
           <% end %>
