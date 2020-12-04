@@ -17,9 +17,35 @@
     width: 175px;
     background: #10B89A;
     position: absolute;
+    z-index: -1;
     right: 10px;
     bottom: 339px;
     opacity: 0.3;
     }
   }
 }
+
+.why-tache {
+  top: 30px;
+  left: -133px;
+  position: absolute;
+  z-index: -1;
+  height: 380px;
+}
+
+.how-tache {
+  top: 130px;
+  left: 152px;
+  position: absolute;
+  z-index: -1;
+  height: 141px;
+}
+
+.incentive-tache {
+  top: 121px;
+  left: -11px;
+  position: absolute;
+  z-index: -1;
+  height: 257px;
+}
+
