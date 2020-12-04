@@ -1,7 +1,15 @@
 <div class="message-container <%= message.user %>" id="message-<%= message.id %>">
   <i class="author">
-    <span><%= message.user.full_name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+     <span class="d-flex justify-content-start align-items-center mb-3">
+      <span class="mr-2" ><%= cl_image_tag message.user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.8", class: "avatar dropdown-toggle" %></span>
+      <span class="d-flex justify-content-center flex-column">
+        <span class="d-flex align-items-center">
+          <span><%= message.user.full_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </span>
+        <p><%= message.content %></p>
+      </span>
+    </span>
   </i>
-  <p><%= message.content %></p>
 </div>
+
