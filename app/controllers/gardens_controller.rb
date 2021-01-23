@@ -1,4 +1,6 @@
 class GardensController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @gardens = policy_scope(Garden)
 
@@ -81,7 +83,7 @@ class GardensController < ApplicationController
     deducted_score = @garden.reward_score
     @appointments.each do |app|
       next if deducted_score.negative?
-    
+
       deducted_score -= app.score
       # next if deducted_score == 0
 
@@ -89,7 +91,7 @@ class GardensController < ApplicationController
         app.update(score: 0)
       else
         app.update(score: - deducted_score)
-      end 
+      end
     end
 
     redirect_to dashboard_path
