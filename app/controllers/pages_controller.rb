@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def dashboard
     @my_appointments = current_user.appointments
     @my_current_appointments = current_user.appointments.where(delivered: nil)
     my_past_appointments = current_user.appointments.where(delivered: true).order(date: :desc)
-    @my_past_appointments = 
+    @my_past_appointments =
       if params[:garden_id]
         my_past_appointments.where(garden_id: params[:garden_id])
       else
