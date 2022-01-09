@@ -1,6 +1,6 @@
 <div class="row">
   <div class="clara-upcoming-appointments col-7">
-    <h2>My appointments</h2>
+    <h2>Mes réservations</h2>
     <p>
       <% @my_current_appointments.each do |appointment|  %>
         <div class="card-appointment">
@@ -16,32 +16,32 @@
               </div>
               <div class="d-flex flex-row justify-content-between align-items-start">
                 <p>🧺  <%= appointment.quantity %> kg of <%= appointment.description %>.
-                  <span class="ml-1">You will aquire <%=appointment.score %> points</span></p>
+                  <span class="ml-1">Vous recevrez <%=appointment.score %> points</span></p>
               </div>
               <p><% if appointment.status == "accepted" %>
-                <span class="mr-3">✅ Appointment accepted</span>
+                <span class="mr-3">✅ Réservation acceptée</span>
               <% elsif appointment.status == "refused" %>
-                <span class="mr-3">❌ Appointment refused</span>
+                <span class="mr-3">❌ Réservation refusée</span>
               <% elsif appointment.status == "pending" %>
-                <span class="mr-3">🔄 Waiting confirmation</span>
+                <span class="mr-3">🔄 En attente de confirmation</span>
               <% end %>
               <% if appointment.delivered == true %>
-                ✅ Delivery received
+                ✅ Livraison confirmée
               <% elsif appointment.delivered == false %>
-                ❌ Not delivered
+                ❌ Non reçue
               <% elsif appointment.delivered == nil %>
-                🔄 Delivery pending </p>
+                🔄 Livraison en attente </p>
             </div>
             <% end %>
 
             <% if policy(appointment).edit? %>
-              <span class="modify">🖍 <%= link_to "Modify", edit_appointment_path(appointment) %></span>
+              <span class="modify">🖍 <%= link_to "Modifier", edit_appointment_path(appointment) %></span>
             <% end %>
             <% if policy(appointment).destroy? %>
-              <span class="delete">🗑 <%= link_to "Delete",
+              <span class="delete">🗑 <%= link_to "Supprimer",
                 appointment_path(appointment),
                 method: :delete,
-                data: { confirm: "Are you sure?"
+                data: { confirm: "Etes-vous sûr?"
                 } %></span>
             <% end %>
        <!--        <div class="card-garden-buttons">

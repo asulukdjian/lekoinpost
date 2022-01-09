@@ -16,7 +16,7 @@
         <li class="nav-item">
           <% if policy(Garden).create? %>
               <%#= link_to 'Create my garden', new_garden_path, class: "btn btn-primary" %>
-              <div class="btn btn-primary create-btn" data-toggle="modal" data-target="#newGardenModal">Create my garden</div>
+              <div class="btn btn-primary create-btn" data-toggle="modal" data-target="#newGardenModal">Crée ton jardin</div>
           <% end %>
         </li>
 
@@ -30,7 +30,7 @@
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create your garden</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Crée ton jardin</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -38,23 +38,23 @@
               <div class="modal-body">
                 <%= simple_form_for (Garden.new) do |f| %>
                   <div class= "d-flex" id="modal-input">
-                    <%= f.input :name, label: "Your garden name", placeholder: "My beautiful garden", wrapper_html: {class: "input-class"}  %>
-                    <%= f.input :description, label: "Garden description", placeholder: "Growing season vegetables", wrapper_html: {class: "input-class"} %>
-                    <%= f.input :reward_score, label: "Reward score", prompt: "Points to be granted an award", collection: 15..40, wrapper_html: {class: "input-class"}  %>
+                    <%= f.input :name, label: "Nom de votre jardin", placeholder: "Mon beau jardin", wrapper_html: {class: "input-class"}  %>
+                    <%= f.input :description, label: "Description du jardin", placeholder: "Faire pousser des légumes de saison", wrapper_html: {class: "input-class"} %>
+                    <%= f.input :reward_score, label: "Récompense", prompt: "Points de récompense", collection: 15..40, wrapper_html: {class: "input-class"}  %>
                   </div>
-                  <%= f.input :address, label: "Garden address", hint: "Enter street and city" %>
-                  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos", hint: "You can add as many photos as you want. Select them all together" %>
-                  <h2 id="h2-abyme"><strong>Add products to your garden</strong></h2>
+                  <%= f.input :address, label: "Adresse du jardin", hint: "Renseigne la rue et la ville" %>
+                  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Ajouter des photos", hint: "Vous pouvez ajouter autant de photos que nécessaire. Sélectionner les toutes ensemble." %>
+                  <h2 id="h2-abyme"><strong>Ajoute des produits à ton jardin</strong></h2>
                     <div class="d-flex" id="modal-input-abyme">
                       <%= abymize(:products, f, min_count: 1) do |abyme| %>
                         <%= abyme.records %>
                         <%= abyme.new_records %>
-                        <%= add_association(content: "Add a product", html: { class: 'btn btn-info mb-3 prod-btn-text'}) %>
+                        <%= add_association(content: "Ajoute un produit", html: { class: 'btn btn-info mb-3 prod-btn-text'}) %>
                       <% end %>
                     </div>
               </div>
               <div class="modal-footer">
-                   <%= f.submit "Submit your garden", class: "btn btn-primary", form: "new_garden"%>
+                   <%= f.submit "Propose ton jardin", class: "btn btn-primary", form: "new_garden"%>
                   <% end %>
               </div>
             </div>
@@ -65,12 +65,12 @@
           <%= cl_image_tag current_user.avatar.key, gravity: :face, crop: :crop, radius: :max, :zoom=>"0.8", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
