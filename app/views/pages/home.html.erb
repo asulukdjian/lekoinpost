@@ -2,16 +2,16 @@
   <!-- style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'home-banner.jpg' %>');"> -->
   <div class="banner-content">
     <div class="title-box">
-      <h1>Transform your organic waste</h1>
+      <h1>Transformez vos biodéchets</h1>
     </div>
     <div class="tagline">
-      <p>Be friendly to the planet and get local products</p>
+      <p>Soyez bon avec la planète, elle vous le rendra</p>
     </div>
 
     <div class="container bord-box">
       <%= render 'shared/search_bar_address_geocoded' %>
     </div>
-      <%= link_to "List of popular gardens", gardens_path, class: "btn btn-info", id: "btn-index-home" %>
+      <%= link_to "Liste des jardins", gardens_path, class: "btn btn-info", id: "btn-index-home" %>
     </div>
 </div>
 <div class="container">
@@ -19,9 +19,9 @@
     <div class="col-4">
       <div class="card-home position-relative">
         <div class="card-text">
-          <h2>Why</h2>
+          <h2>Pourquoi</h2>
           <span></span>
-          <p> We all want to find a way to reduce waste. One of the possibilities is to recycle and categorise our waste. You just have to put plastic and cardboard in the yellow bin, glass and metal in the green one and organic waste can be stored apart from your everyday waste and thrown away in a compost bin. But where does that content end up ? Is it any useful ? Can’t there be a way to actually use organic waste in the city ?</p>
+          <p> On aimerait tou.te.s réduire la quantité de nos déchets. Une possibilité serait de les recycler et de les trier. Il suffirait de mettre le plastique et les cartons dans la poubelle jaune, les verres et métaux dans la poubelle verte, et les bio-déchets dans le bac à compost. Mais où vont ces bacs à compost? Comment valoriser nos biodéchets sur nos territoires?</p>
         </div>
         <%= image_tag "tache-why.svg", class: "why-tache" %>
         <!-- style: "position: absolute;" -->
@@ -30,8 +30,8 @@
     <div class="col-4">
       <div class="card-home">
           <div class="card-text">
-            <h2>How</h2>
-            <p> At Où Compost we think we have an answer. We will show you a list of urban gardens growing vegetables, fruits, plants and/or flowers in your neighbourhood. You then choose which one you would like to give your organic waste to and a meeting will be arranged so that you might drop it or ask for the owner to organise a pickup right from your place.</p>
+            <h2>Comment</h2>
+            <p> Chez Le Koinpost nous pensons avoir trouvé la solution. En vous dirigeant vers une liste de potagers urbains où poussent des légumes, fruits, plantes, et/ou fleurs à proximité de votre adresse, vous aurez le choix de donner vos bio-déchets à un jardinier avec qui vous pourrez organiser une collecte. Celle-ci peut se faire soit en déposant vos déchets au potager.</p>
           </div>
           <%= image_tag "tache-how.svg", class: "how-tache" %>
         </div>
@@ -39,8 +39,8 @@
     <div class="col-4">
       <div class="card-home">
         <div class="card-text">
-          <h2>Incentive</h2>
-          <p> That’s the fun part : a win-win situation where the local gardens don’t have to rely that much on industrial compost and can save these costs and where you will be rewarded for your loyalty towards a given garden. Every garden owner can determine an amount of waste (1 unit is approx. 3kg) and an incentive for you to pick once that amount dropped.</p>
+          <h2>Récompense</h2>
+          <p> Nous créons une situation où les potagers locaux ne dépendent plus de l'achat de compost industriel et où vous accumulez des points/jetons au jardin à qui vous donnez vos bio-déchets. Chaque jardin peut définir la quantité correspondante aux points et vous recevrez une récompense ! Elles peuvent être utilisées dans le réseau participant.</p>
         </div>
         <%= image_tag "tache-incentive.svg", class: "incentive-tache" %>
       </div>
