@@ -16,12 +16,12 @@
     <div class="col-4">
       <div class="align-items-center">
         <div class="card-garden-buttons">
-        <div class="give-button"><%= link_to "Give your waste", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %>
+        <div class="give-button"><%= link_to "Donne tes déchets", new_garden_appointment_path(@garden), class: "btn btn-primary", data:{toggle:"modal", target:"#newAppointmentModal"} %>
         </div>
         </div>
         <div class="card-products">
           <div class="products-label">
-          <p><strong>Products</strong></p>
+          <p><strong>Produits</strong></p>
           </div>
           <div class="products-description">
           <% @garden.products.each do |product| %>
